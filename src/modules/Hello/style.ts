@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div<{ background: string, font: string }>`
-  width: 100vw;
-  height: 100vh;
+export const Wrapper = styled.div<{ background: string; font: string }>`
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  font-size: 5vmin;
+  font-size: 3rem;
   background-color: ${({ background }) => background};
   color: ${({ font }) => font};
 `;

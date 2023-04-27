@@ -9,9 +9,9 @@ const smp = new SpeedMeasurePlugin();
 
 module.exports = smp.wrap({
   mode: 'development',
-  entry: path.join(__dirname, '../src', 'index.js'),
+  entry: path.join(__dirname, '../src', 'index.tsx'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../build'),
     filename: 'main.bundle.min.js',
   },
   optimization: {
@@ -48,12 +48,7 @@ module.exports = smp.wrap({
       },
       {
         test: /\.(s*)css$/,
-        use: [
-          'cache-loader',
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
+        use: ['cache-loader', 'style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg|ttf|woff|woff2|eot)$/i,
