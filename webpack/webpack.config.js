@@ -4,6 +4,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const smp = new SpeedMeasurePlugin();
 
@@ -66,5 +67,8 @@ module.exports = smp.wrap({
       template: path.join(__dirname, '../public', 'index.html'),
     }),
     new CheckerPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'public', filter: path => path.indexOf('html') === -1 }],
+    }),
   ],
 });

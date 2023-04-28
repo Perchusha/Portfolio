@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { InProgress, Hello } from './modules';
+import { InProgress, Hello, TopBar } from './modules';
 
 const App = () => {
   useEffect(() => {
@@ -10,6 +10,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <TopBar />
       <Routes>
         <Route path="/hello" element={<Hello />} />
         <Route path="/inProgress" element={<InProgress />} />

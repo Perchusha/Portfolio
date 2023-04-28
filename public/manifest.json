@@ -1,9 +1,0 @@
-{
-  "short_name": "Landing Template",
-  "name": "Landing Template",
-  "icons": [],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
