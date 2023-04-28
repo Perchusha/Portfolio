@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
-import { generateLightColorHex, generateDarkColorHex } from '../../utils';
 import { Wrapper } from './style';
+import { StyledButton } from '../../components';
 
 export const Hello = () => {
-  return <Wrapper>Hello world!</Wrapper>;
+  return (
+    <Wrapper>
+      <div>Hello world!</div>
+    </Wrapper>
+  );
 };

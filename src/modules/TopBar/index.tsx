@@ -4,8 +4,8 @@ import { NavigateButton } from '../../components';
 export const TopBar = () => {
   return (
     <Wrapper>
-      <NavigateButton text={'Hello'} path={'/hello'} />
-      <NavigateButton text={'InProgress'} path={'/inProgress'} />
+      <NavigateButton to={'/hello'}>Hello</NavigateButton>
+      <NavigateButton to={'/inProgress'}>InProgress</NavigateButton>
     </Wrapper>
   );
 };

@@ -7,6 +7,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  background-color: #000000;
+  background-color: #2e2e2c;
   color: #ffffff;
 `;

@@ -1,1 +1,1 @@
-export * from './NavigateButton';
+export * from './StyledButtons';

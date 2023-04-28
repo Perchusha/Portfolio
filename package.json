@@ -5,7 +5,7 @@
   "homepage": "./",
   "scripts": {
     "start": "webpack serve --open --config ./webpack/webpack.dev.js",
-    "build": "yarn lint && webpack --config ./webpack/webpack.prod.js",
+    "build": "yarn lint && rimraf build && webpack --config ./webpack/webpack.prod.js",
     "lint": "npx prettier --write ./"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0",
     "redux-saga": "^1.2.3",
+    "rimraf": "^5.0.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "styled-components": "^5.3.10",
