@@ -9,9 +9,18 @@
     "build": "yarn lint && rimraf build && webpack --config ./webpack/webpack.prod.js",
     "lint": "npx prettier --write ./"
   },
+  "husky": {
+    "hooks": {
+      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
+      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
+      "post-applypatch": "echo \"[Husky] post-applypatch\"",
+      "pre-commit": "echo \"[Husky] pre-commit\""
+    }
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "copy-webpack-plugin": "^11.0.0",
+    "husky": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -21,14 +30,14 @@
     "rimraf": "^5.0.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
-    "styled-components": "^5.3.10",
+    "styled-components": "^6.0.7",
     "typed-redux-saga": "^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
-    "@types/node": "^18.16.1",
+    "@types/node": "^20.5.0",
     "@types/react": "^18.2.0",
     "@types/react-bootstrap": "^0.32.32",
     "@types/react-dom": "^18.2.1",
@@ -39,7 +48,7 @@
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.2",
     "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
