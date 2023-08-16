@@ -7,8 +7,7 @@
   "scripts": {
     "start": "webpack serve --open --config ./webpack/webpack.dev.js",
     "build": "yarn lint && rimraf build && webpack --config ./webpack/webpack.prod.js",
-    "lint": "npx prettier --write ./",
-    "lint-staged": "lint-staged --config lint-staged.js"
+    "lint": "npx prettier --write ./"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -40,15 +39,12 @@
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.0",
     "prettier": "^3.0.2",
     "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
     "thread-loader": "^4.0.1",
     "ts-loader": "^9.4.2",
-    "tsc-files": "^1.1.4",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^5.0.4",
     "webpack": "^5.81.0",
