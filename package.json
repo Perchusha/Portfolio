@@ -9,6 +9,11 @@
     "build": "yarn lint && rimraf build && webpack --config ./webpack/webpack.prod.js",
     "lint": "npx prettier --write ./"
   },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn lint"
+    ]
+  },
   "husky": {
     "hooks": {
       "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
@@ -48,6 +53,7 @@
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
+    "lint-staged": "^14.0.0",
     "prettier": "^3.0.2",
     "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.2",
