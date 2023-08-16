@@ -9,15 +9,15 @@
     "build": "yarn lint && rimraf build && webpack --config ./webpack/webpack.prod.js",
     "lint": "npx prettier --write ./"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"\n\n[Husky] SOME TEXT HERE\n\n\" && lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "yarn lint"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
