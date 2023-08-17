@@ -47,6 +47,7 @@ export const Calculator = () => {
 
   const operationHandler = value => {
     if (notEmpty()) {
+      if (operation) setMemoryNumber('');
       setOperation(value);
     }
   };
@@ -72,9 +73,16 @@ export const Calculator = () => {
     }
   };
 
+  const clear = () => {
+    setCurrentNumber('');
+    setMemoryNumber('');
+    setOperation(null);
+  };
+
   const functionalHandler = key => {
     switch (key) {
       case 'remove': {
+        if (currentNumber === '') clear();
         setCurrentNumber(prev => {
           if (prev.length) prev = prev.slice(0, -1);
           return prev;
@@ -82,9 +90,7 @@ export const Calculator = () => {
         break;
       }
       case 'clear': {
-        setCurrentNumber('');
-        setMemoryNumber('');
-        setOperation(null);
+        clear();
         break;
       }
       case 'fractional': {
@@ -114,7 +120,11 @@ export const Calculator = () => {
   return (
     <Wrapper>
       <Container>
-        <StyledInput type="string" value={Number(currentNumber)} onChange={console.log} />
+        <StyledInput
+          type="string"
+          value={Number(currentNumber)}
+          onChange={event => event.preventDefault()}
+        />
         <NumPad>
           <StyledButton onClick={() => functionalHandler('clear')}>
             {notEmpty() ? 'C' : 'AC'}
