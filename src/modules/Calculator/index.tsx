@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { StyledButton } from '../../components';
 import { isOperation, isNumeric, DoTheMath } from './helper';
-import { operationType } from './type';
+import { operationType } from './types';
 import { Wrapper, Container, NumPad, StyledInput } from './styled';
 
 export const Calculator = () => {
@@ -34,7 +34,7 @@ export const Calculator = () => {
 
   const digitHandler = value => {
     if (equalCounter > 0) setEqualCounter(0);
-    // TODO: add second operation calculation
+
     if (operation && !memoryNumber) {
       setMemoryNumber(currentNumber);
       setCurrentNumber(value.toString());

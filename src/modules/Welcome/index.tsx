@@ -9,6 +9,7 @@ export const Welcome = () => {
       </TextSpan>
       <ul>
         <li>Calculator</li>
+        <li>Paint</li>
       </ul>
     </Wrapper>
   );

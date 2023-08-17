@@ -1,4 +1,4 @@
-import { operationType } from './type';
+import { operationType } from './types';
 
 export const isNumeric = (value: string) => {
   return !isNaN(parseFloat(value));

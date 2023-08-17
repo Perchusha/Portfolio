@@ -21,6 +21,7 @@ export const TopBar = () => {
       onMouseLeave={debounce(mouseLeaveHandler, 2000)}
     >
       <NavigateButton to={'/calculator'}>Calculator</NavigateButton>
+      <NavigateButton to={'/paint'}>Paint</NavigateButton>
       <NavigateButton to={'/inProgress'}>InProgress</NavigateButton>
     </Wrapper>
   );
