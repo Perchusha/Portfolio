@@ -1,15 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
-import { Wrapper, Container, NumPad, StyledInput } from './styled';
+import { useState, useEffect } from 'react';
 import { StyledButton } from '../../components';
-import { isOperation, isNumeric } from './helper';
+import { isOperation, isNumeric, DoTheMath } from './helper';
+import { operationType } from './type';
+import { Wrapper, Container, NumPad, StyledInput } from './styled';
 
 export const Calculator = () => {
-  const ref = useRef(null);
-  const [state, setState] = useState({
-    value: null,
-    operation: null,
-    memory: null,
-  });
+  const [currentNumber, setCurrentNumber] = useState<string>('');
+  const [memoryNumber, setMemoryNumber] = useState<string>('');
+  const [operation, setOperation] = useState<operationType | null>(null);
+  const [equalCounter, setEqualCounter] = useState<number>(0);
 
   const checkKeyboardEvent = event => {
     const key = event.key;
@@ -34,63 +33,117 @@ export const Calculator = () => {
   });
 
   const digitHandler = value => {
-    if (typeof value === 'string') value = Number(value);
-    console.log(value);
-    setState(prev => {
-      prev.value = value;
-      return prev;
-    });
-    if (ref && ref.current) {
-      // @ts-ignore
-      ref.current.value = (ref.current.value || '') + value;
+    if (equalCounter > 0) setEqualCounter(0);
+    // TODO: add second operation calculation
+    if (operation && !memoryNumber) {
+      setMemoryNumber(currentNumber);
+      setCurrentNumber(value.toString());
+    } else {
+      setCurrentNumber(prev => {
+        return prev + value;
+      });
     }
   };
 
   const operationHandler = value => {
-    console.log(`OperationHandler: ${value}`);
+    if (notEmpty()) {
+      setOperation(value);
+    }
   };
+
   const equalHandler = () => {
-    console.log(`EqualHandler: ${JSON.stringify(state, null, 4)}`);
+    if ((memoryNumber || currentNumber) && operation) {
+      if (memoryNumber === '') {
+        setCurrentNumber(prev => {
+          setMemoryNumber(prev);
+          return DoTheMath(currentNumber, currentNumber, operation).toString();
+        });
+      } else {
+        setCurrentNumber(prev => {
+          if (equalCounter > 0) {
+            return DoTheMath(prev, memoryNumber, operation).toString();
+          } else {
+            setMemoryNumber(prev);
+            return DoTheMath(memoryNumber, prev, operation).toString();
+          }
+        });
+      }
+      setEqualCounter(prev => (prev += 1));
+    }
   };
 
   const functionalHandler = key => {
-    console.log(`FunctionalHandler: ${key}`);
+    switch (key) {
+      case 'remove': {
+        setCurrentNumber(prev => {
+          if (prev.length) prev = prev.slice(0, -1);
+          return prev;
+        });
+        break;
+      }
+      case 'clear': {
+        setCurrentNumber('');
+        setMemoryNumber('');
+        setOperation(null);
+        break;
+      }
+      case 'fractional': {
+        setCurrentNumber(prev => `${prev}.`);
+        break;
+      }
+      case 'percent': {
+        setCurrentNumber(prev => {
+          return ((Number(prev) / 100) * Number(memoryNumber || 1)).toString();
+        });
+        break;
+      }
+      case 'reverse': {
+        if (currentNumber === '0' || currentNumber === '') return;
+        setCurrentNumber(prev => {
+          return Number(prev) > 0 ? `-${prev}` : Math.abs(Number(prev)).toString();
+        });
+        break;
+      }
+    }
+  };
+
+  const notEmpty = () => {
+    return currentNumber !== '' || memoryNumber !== '' || operation;
   };
 
   return (
     <Wrapper>
       <Container>
-        <StyledInput
-          ref={ref}
-          type="number"
-          value={Number(state.value) || ''}
-          onChange={console.log}
-        />
+        <StyledInput type="string" value={Number(currentNumber)} onChange={console.log} />
         <NumPad>
-          <StyledButton onClick={() => operationHandler('clear')}>AC</StyledButton>
-          <StyledButton onClick={() => operationHandler('reverse')}>+/-</StyledButton>
-          <StyledButton onClick={() => operationHandler('%')}>%</StyledButton>
-          <StyledButton onClick={() => operationHandler('/')}>/</StyledButton>
+          <StyledButton onClick={() => functionalHandler('clear')}>
+            {notEmpty() ? 'C' : 'AC'}
+          </StyledButton>
+          <StyledButton onClick={() => functionalHandler('reverse')}>+/-</StyledButton>
+          <StyledButton onClick={() => functionalHandler('percent')}>%</StyledButton>
+          <StyledButton onClick={() => functionalHandler('remove')}>{'<'}</StyledButton>
 
           <StyledButton onClick={() => digitHandler(1)}>1</StyledButton>
           <StyledButton onClick={() => digitHandler(2)}>2</StyledButton>
           <StyledButton onClick={() => digitHandler(3)}>3</StyledButton>
-          <StyledButton onClick={() => operationHandler('*')}>*</StyledButton>
+          <StyledButton onClick={() => operationHandler('/')}>/</StyledButton>
 
           <StyledButton onClick={() => digitHandler(4)}>4</StyledButton>
           <StyledButton onClick={() => digitHandler(5)}>5</StyledButton>
           <StyledButton onClick={() => digitHandler(6)}>6</StyledButton>
-          <StyledButton onClick={() => operationHandler('-')}>-</StyledButton>
+          <StyledButton onClick={() => operationHandler('*')}>*</StyledButton>
 
           <StyledButton onClick={() => digitHandler(7)}>7</StyledButton>
           <StyledButton onClick={() => digitHandler(8)}>8</StyledButton>
           <StyledButton onClick={() => digitHandler(9)}>9</StyledButton>
-          <StyledButton onClick={() => operationHandler('+')}>+</StyledButton>
+          <StyledButton onClick={() => operationHandler('-')}>-</StyledButton>
 
           <StyledButton onClick={() => digitHandler(0)}>0</StyledButton>
           <StyledButton value="fractional" onClick={() => functionalHandler('fractional')}>
             .
           </StyledButton>
+          <StyledButton onClick={() => operationHandler('+')}>+</StyledButton>
+
           <StyledButton value="equals" onClick={equalHandler}>
             =
           </StyledButton>

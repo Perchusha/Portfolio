@@ -43,5 +43,6 @@ export const NumPad = styled.div`
 
   button {
     margin: 1vmin;
+    text-align: center;
   }
 `;
