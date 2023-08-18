@@ -9,8 +9,9 @@ export const Wrapper = styled.div<{ hidden: boolean }>`
   justify-content: center;
   transform: translateX(-50%);
   padding: 1vmin 2vmin;
-  border-bottom: 0.1vmin solid #484846;
-  background: #353533;
+  border-bottom: 0.1vmin solid ${({ theme }) => theme.border};
+
+  background: ${({ theme }) => theme.background};
 
   opacity: ${({ hidden }) => (hidden ? 0 : 1)};
   transition: opacity 0.3s;

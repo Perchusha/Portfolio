@@ -6,18 +6,17 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2e2e2c;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.backgroundDark};
 `;
 
 export const Container = styled.div`
-  background: #484846;
+  background: ${({ theme }) => theme.backgroundLight};
   padding: 2vmin 4vmin;
   border-radius: 1vmin;
-
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: 0.1vmin solid ${({ theme }) => theme.border};
 `;
 
 export const StyledInput = styled.input`
@@ -26,8 +25,8 @@ export const StyledInput = styled.input`
   padding: 1vmin 2vmin;
   width: calc(100% - 6vmin);
   align-items: center;
-  background: white;
-  color: #2e2e2c;
+  background: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.primaryText};
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

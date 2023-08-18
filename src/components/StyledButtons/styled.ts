@@ -10,14 +10,14 @@ const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   user-select: none;
   transition: all 0.2s;
 
-  ${({ mode }) => {
+  ${({ mode, theme }) => {
     switch (mode) {
       case 'base':
-        return 'color: #2e2e2c; background: #57c3fa;';
+        return `color: ${theme.primaryText}; background: ${theme.primary};`;
       case 'success':
-        return 'color: #73BB54; background: #73BB5410;';
+        return `color: ${theme.successText}; background: ${theme.success};`;
       case 'error':
-        return 'color: #ff5151; background: #ff515110;';
+        return `color: ${theme.dangerText}; background: ${theme.danger};`;
     }
   }}
 
@@ -26,15 +26,18 @@ const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   }
 
   &:focus {
-    box-shadow: 0 0 0 0.2vmin rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.2vmin ${({ theme }) => theme.focus};
   }
 
   &:active {
-    box-shadow: 0 0 0 0.3vmin rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.3vmin ${({ theme }) => theme.active};
   }
 `;
 
-export const Button = styled.button<{ mode: IButtonMode }>`
+export const Button = styled.button<{ mode: IButtonMode; $active: boolean }>`
+  ${({ $active }) => {
+    return $active ? `filter: brightness(70%) !important;` : '';
+  }}
   ${ButtonDefaultCSS}
 `;
 

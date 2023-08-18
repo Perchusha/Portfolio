@@ -1,9 +1,14 @@
 import { IStyledButtonProps, INavigatorButtonProps } from './types';
 import { Button, Navigate } from './styled';
 
-export const StyledButton = ({ children, mode = 'base', ...props }: IStyledButtonProps) => {
+export const StyledButton = ({
+  children,
+  mode = 'base',
+  $active = false,
+  ...props
+}: IStyledButtonProps) => {
   return (
-    <Button mode={mode} {...props}>
+    <Button $active={$active} mode={mode} {...props}>
       {children}
     </Button>
   );

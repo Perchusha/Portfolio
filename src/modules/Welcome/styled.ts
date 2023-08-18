@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const TitleSpan = styled.span`
   text-align: center;
-  font-size: 4vmin;
+  font-size: ${({ theme }) => theme.titleSize};
 `;
 
 export const TextSpan = styled.span`
-  font-size: 2vmin;
+  font-size: ${({ theme }) => theme.fontSize};
 `;
 
 export const Wrapper = styled.div`
@@ -14,8 +14,8 @@ export const Wrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #2e2e2c;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.backgroundDark};
+  color: ${({ theme }) => theme.primaryText};
   padding: 8vmin 12vmin;
 
   ${TitleSpan}:first-child {

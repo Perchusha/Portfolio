@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
-  background-color: #2e2e2c;
-  color: #ffffff;
+  font-size: ${({ theme }) => theme.titleSize};
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.primaryText};
 `;

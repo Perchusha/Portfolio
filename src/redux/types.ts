@@ -1,12 +1,27 @@
-export type IGender = {
-  gender: 'male' | 'female' | 'other';
-};
+export type ITheme = 'dark' | 'light' | 'green' | 'random';
 
-export type ILocation = {
-  location: string;
-};
+export interface IThemeProps {
+  fontSize: string;
+  titleSize: string;
+  primary: string;
+  primaryText: string;
+  success: string;
+  successText: string;
+  danger: string;
+  dangerText: string;
+  background: string;
+  backgroundLight: string;
+  backgroundDark: string;
+  border: string;
+  focus: string;
+  active: string;
+}
 
 export type IMainState = {
-  Gender: IGender;
-  Location: ILocation;
+  Theme: { key: ITheme; theme: IThemeProps };
 };
+
+export interface IThemeInitialState {
+  key: ITheme;
+  theme: IThemeProps;
+}
