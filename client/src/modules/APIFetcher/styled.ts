@@ -33,6 +33,7 @@ export const Preview = styled.div`
   background: white;
   overflow-y: auto;
   padding: 0.5vmin 1vmin;
-  font-size: 1vmin;
+  font-size: 1.5vmin;
   white-space: pre;
+  border: 0.1vmin solid ${({ theme }) => theme.border};
 `;

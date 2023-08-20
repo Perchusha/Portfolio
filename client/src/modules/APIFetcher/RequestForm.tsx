@@ -4,15 +4,15 @@ import { StyledInput, StyledSelect } from '../../components/StyledForm/styled';
 import { IRequestForm } from './types';
 
 export const RequestForm = ({ previewRef }: IRequestForm) => {
-  const [URL, setURL] = useState<string>('https://reqres.in/api/users?page=1');
-  const [requestMethod, setRequestMethod] = useState<string>('post');
-  const [requestBody, setRequestBody] = useState<string>('fetch');
+  const [URL, setURL] = useState<string>('http://localhost:8081/users');
+  const [requestMethod, setRequestMethod] = useState<string>('get');
+  const [requestBody, setRequestBody] = useState<Object>({});
 
   const submitHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
     const options =
-      requestMethod === 'post'
+      requestMethod !== 'get' && requestMethod !== 'delete'
         ? {
             method: requestMethod,
             headers: {
@@ -48,6 +48,7 @@ export const RequestForm = ({ previewRef }: IRequestForm) => {
         placeholder="URL"
         onChange={urlChangeHandler}
         value={URL}
+        title="You can find API documentation in server .md file"
         required
       />
       <StyledSelect name="method" onChange={methodChangeHandler} value={requestMethod} required>
@@ -55,8 +56,11 @@ export const RequestForm = ({ previewRef }: IRequestForm) => {
         <option value="get">GET</option>
         <option value="put">PUT</option>
         <option value="delete">DELETE</option>
+        <option value="patch">PATCH</option>
       </StyledSelect>
-      <StyledButton onClick={submitHandler}>Submit</StyledButton>
+      <StyledButton onClick={submitHandler} title="Submit request">
+        Submit
+      </StyledButton>
     </StyledForm>
   );
 };

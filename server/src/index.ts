@@ -1,7 +1,7 @@
-import http = require('http');
-import app = require('./app');
+import http from 'http';
+import app from './app';
 
-const port = process.env.PORT || 8081;
+require('dotenv').config();
 
 const server = http.createServer(app);
-server.listen(port);
+server.listen(process.env.PORT || 8081);

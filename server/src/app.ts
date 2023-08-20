@@ -1,8 +1,10 @@
 import express from 'express';
+import cors from 'cors';
+import userRoutes from './api/routes/users';
+
 const app = express();
+app.use(express.json());
 
-const userRoutes = require('./api/routes/users');
+app.use('/users', cors(), userRoutes);
 
-app.use('/users', userRoutes);
-
-module.exports = app;
+export default app;

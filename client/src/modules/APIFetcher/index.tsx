@@ -13,11 +13,11 @@ export const APIFetcher = () => {
         <RequestForm previewRef={requestPreviewRef} />
         <Preview ref={requestPreviewRef} />
       </RequestsContainer>
-      {/* ------ WEB SOCKET ------ */}
-      <RequestsContainer>
-        <WebsocketForm />
-        <Preview />
-      </RequestsContainer>
+      {/* ------ TODO: WEB SOCKET ------ */}
+      {/*<RequestsContainer>*/}
+      {/*  <WebsocketForm />*/}
+      {/*  <Preview />*/}
+      {/*</RequestsContainer>*/}
     </Wrapper>
   );
 };
