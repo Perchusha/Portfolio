@@ -1,7 +1,5 @@
 # Portfolio app
 
----
-
 Greetings! This project in my portfolio consists of a client built with React and a server built with Node.js, which I'm slowly filling out.
 <br><br>
 The client offers three main functionalities: Calculator, Paint, and API Fetcher.
