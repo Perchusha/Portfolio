@@ -9,6 +9,7 @@ const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   cursor: pointer;
   user-select: none;
   transition: all 0.2s;
+  text-align: center;
 
   ${({ mode, theme }) => {
     switch (mode) {

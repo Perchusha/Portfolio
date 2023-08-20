@@ -17,8 +17,8 @@ import {
 } from '../../components';
 import { Wrapper, Container, ToolBar, RightPart, CanvasContainer } from './styled';
 
-import TransparentLight from '../../media/transparent-light.png';
-import TransparentDark from '../../media/transparent-dark.png';
+import TransparentLight from '../../assets/transparent-light.png';
+import TransparentDark from '../../assets/transparent-dark.png';
 
 export const Paint = () => {
   const { key, theme } = useSelector(selectTheme);

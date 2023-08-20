@@ -20,6 +20,7 @@ export const TopBar = () => {
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={debounce(mouseLeaveHandler, 2000)}
     >
+      <NavigateButton to={'/apifetcher'}>API Fetcher</NavigateButton>
       <NavigateButton to={'/calculator'}>Calculator</NavigateButton>
       <NavigateButton to={'/paint'}>Paint</NavigateButton>
       <NavigateButton to={'/inProgress'}>InProgress</NavigateButton>
