@@ -9,6 +9,7 @@ import { BottomBar } from './modules/BottomBar';
 const App = () => {
   const { theme } = useSelector(selectTheme);
 
+  // TODO: change TopBar position and some content styles
   return (
     <ThemeProvider theme={theme}>
       <Router>

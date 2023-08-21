@@ -45,7 +45,7 @@ router.post('/', async (req, res, next) => {
   users.push(newUser);
 
   writeFile(filePath, JSON.stringify(users, null, '\t')).then(() => {
-    res.status(200).send(newUser);
+    res.status(201).send(newUser);
   });
 });
 

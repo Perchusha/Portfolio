@@ -1,7 +1,7 @@
 {
-  "name": "landing_template",
+  "name": "portfolio",
   "version": "1.0.0",
-  "repository": "https://github.com/Perchusha/landingTemp.git",
+  "repository": "https://github.com/Perchusha/Portfolio.git",
   "author": "Anton Perch",
   "license": "MIT",
   "scripts": {

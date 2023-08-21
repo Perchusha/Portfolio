@@ -44,8 +44,8 @@ The server provides a basic API for working with mock-data. All endpoints are se
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/Perchusha/landingTemp`
-2. Navigate to the project directory: `cd landingTemp`
+1. Clone the repository: `git clone https://github.com/Perchusha/Portfolio`
+2. Navigate to the project directory: `cd portfolio`
 3. Run `yarn prepare` in root folder for installing dependencies for client and server
 4. Run `yarn start:client` to run client part of project
 5. Run `yarn start:server` to run server part of project
