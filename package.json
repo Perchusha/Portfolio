@@ -2,15 +2,18 @@
   "name": "portfolio",
   "version": "1.0.0",
   "repository": "https://github.com/Perchusha/Portfolio.git",
+  "homepage": "https://perchusha.github.io/Portfolio/",
   "author": "Anton Perch",
   "license": "MIT",
   "scripts": {
     "prepare": "yarn --cwd client && yarn --cwd server",
+    "start": "concurrently --kill-others \"yarn run start:client\" \"yarn run start:server\"",
     "start:client": "yarn --cwd client start",
-    "start:server": "yarn --cwd server start:dev",
+    "start:server": "yarn --cwd server watch",
     "deploy": "rm -rf dist && mkdir dist && yarn --cwd client build && cp -r client/build/. dist && gh-pages -d dist"
   },
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "gh-pages": "^6.0.0"
   }
 }

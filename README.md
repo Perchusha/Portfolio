@@ -44,11 +44,12 @@ The server provides a basic API for working with mock-data. All endpoints are se
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/Perchusha/Portfolio`
-2. Navigate to the project directory: `cd portfolio`
-3. Run `yarn prepare` in root folder for installing dependencies for client and server
-4. Run `yarn start:client` to run client part of project
-5. Run `yarn start:server` to run server part of project
+1. Clone the repository: `git clone https://github.com/Perchusha/Portfolio`.
+2. Navigate to the project directory: `cd portfolio`.
+3. Run `yarn prepare` in root folder for installing dependencies for client and server.
+4. Run `yarn start` to start the client and server at the same time.
+5. Run `yarn start:client` to run client part of project.
+6. Run `yarn start:server` to run server part of project.
 
 ### Usage
 
@@ -61,7 +62,7 @@ The server provides a basic API for working with mock-data. All endpoints are se
 #### Server
 
 1. Start the project: In the `server` directory, run `yarn start`.
-2. Start debug mode: In the `server` directory, run `yarn start:dev`.
+2. Start debug mode: In the `server` directory, run `yarn watch`.
 3. Build the project: In the `server` directory, run `yarn build`.
 4. Lint the project: In the `server` directory, run `yarn lint`.
 

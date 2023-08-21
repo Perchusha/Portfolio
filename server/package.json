@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn build && node dist/index.js",
     "build": "rimraf ./dist && tsc",
-    "start:dev": "nodemon --quiet",
+    "watch": "nodemon --quiet",
     "lint": "npx prettier --write src"
   },
   "repository": {
