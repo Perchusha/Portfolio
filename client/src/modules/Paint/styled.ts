@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: ${({ theme }) => theme.contentWrapperSize};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 80%;
-  height: 80%;
+  width: 160vmin;
+  height: 80vmin;
   border: 0.1vmin solid ${({ theme }) => theme.border};
 
   svg {
@@ -43,4 +43,6 @@ export const RightPart = styled.div`
 
 export const CanvasContainer = styled.div`
   height: calc(100% - 4.1vmin);
+  position: relative;
+  overflow: hidden;
 `;

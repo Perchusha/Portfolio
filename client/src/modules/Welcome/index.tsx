@@ -1,6 +1,7 @@
 import { Wrapper, TitleSpan, TextSpan } from './styled';
 
 export const Welcome = () => {
+  // TODO: change Welcome page
   return (
     <Wrapper>
       <TitleSpan>This is the entry page for this project!</TitleSpan>

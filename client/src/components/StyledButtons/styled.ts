@@ -10,6 +10,7 @@ const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   user-select: none;
   transition: all 0.2s;
   text-align: center;
+  height: fit-content;
 
   ${({ mode, theme }) => {
     switch (mode) {

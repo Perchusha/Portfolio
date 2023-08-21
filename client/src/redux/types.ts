@@ -15,6 +15,9 @@ export interface IThemeProps {
   border: string;
   focus: string;
   active: string;
+  topBarHeight: string;
+  bottomBarHeight: string;
+  contentWrapperSize: string;
 }
 
 export type IMainState = {

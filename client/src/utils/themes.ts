@@ -10,7 +10,12 @@ const commonStyles = {
   titleSize: '4vmin',
   focus: 'rgba(255, 255, 255, 0.5)',
   active: 'rgba(255, 255, 255, 0.5)',
+  topBarHeight: '6vmin',
+  bottomBarHeight: '6vmin',
+  contentWrapperSize: '',
 };
+
+commonStyles.contentWrapperSize = `calc(100% - calc(${commonStyles.topBarHeight} + ${commonStyles.bottomBarHeight}))`;
 
 export const Themes = {
   dark: {
