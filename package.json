@@ -6,14 +6,35 @@
   "author": "Anton Perch",
   "license": "MIT",
   "scripts": {
-    "prepare": "yarn --cwd client && yarn --cwd server",
+    "deps": "yarn --cwd client && yarn --cwd server",
     "start": "concurrently --kill-others \"yarn run start:client\" \"yarn run start:server\"",
     "start:client": "yarn --cwd client start",
     "start:server": "yarn --cwd server watch",
-    "deploy": "rm -rf dist && mkdir dist && yarn --cwd client build && cp -r client/build/. dist && gh-pages -d dist"
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "yarn lint:client && yarn --cwd client build",
+    "build:server": "yarn lint:server && yarn --cwd server build",
+    "lint": "yarn lint:client && yarn lint:server",
+    "lint:client": "eslint --fix --ext .ts,.tsx ./client/src",
+    "lint:server": "eslint --fix --ext .ts ./server/src",
+    "prepare": "yarn lint:client && rm -rf dist && mkdir dist && yarn build:client && cp -r client/build/. dist",
+    "deploy": "gh-pages -d dist"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn lint"
+    ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "concurrently": "^8.2.0",
-    "gh-pages": "^6.0.0"
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "gh-pages": "^6.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6"
   }
 }

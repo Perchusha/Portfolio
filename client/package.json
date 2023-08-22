@@ -6,8 +6,7 @@
   "author": "perchusha",
   "scripts": {
     "start": "webpack serve --open --config ./webpack/webpack.dev.js",
-    "build": "yarn lint && rimraf build && webpack --config ./webpack/webpack.prod.js",
-    "lint": "npx prettier --write ./"
+    "build": "rimraf build && webpack --config ./webpack/webpack.prod.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -39,7 +38,6 @@
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
-    "prettier": "^3.0.2",
     "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",

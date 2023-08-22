@@ -6,23 +6,24 @@ import { IRequestForm } from './types';
 export const RequestForm = ({ previewRef }: IRequestForm) => {
   const [URL, setURL] = useState<string>('http://localhost:8081/users');
   const [requestMethod, setRequestMethod] = useState<string>('get');
-  const [requestBody, setRequestBody] = useState<Object>({});
+  // const [requestBody, setRequestBody] = useState<object>({});
 
   const submitHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    const options =
-      requestMethod !== 'get' && requestMethod !== 'delete'
-        ? {
-            method: requestMethod,
-            headers: {
-              'Content-Type': 'application/json;charset=utf-8',
-            },
-            body: JSON.stringify(requestBody),
-          }
-        : {};
+    // const options =
+    //   requestMethod !== 'get' && requestMethod !== 'delete'
+    //     ? {
+    //         method: requestMethod,
+    //         headers: {
+    //           'Content-Type': 'application/json;charset=utf-8',
+    //         },
+    //         body: JSON.stringify(requestBody),
+    //       }
+    //     : {};
 
-    fetch(URL, options)
+    // fetch(URL, options)
+    fetch(URL)
       .then(res => res.json())
       .then(result => {
         const text = JSON.stringify(result, null, 4);

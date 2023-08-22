@@ -6,6 +6,6 @@ export type ReactChild = ReactElement | ReactText;
 
 export interface ReactNodeArray extends Array<ReactNode> {}
 
-export type ReactFragment = {} | ReactNodeArray;
+export type ReactFragment = object | ReactNodeArray;
 
 export type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;

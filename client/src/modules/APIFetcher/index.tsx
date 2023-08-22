@@ -1,6 +1,5 @@
 import { Wrapper, RequestsContainer, Preview } from './styled';
 import { RequestForm } from './RequestForm';
-import { WebsocketForm } from './WebsocketForm';
 import { useRef } from 'react';
 
 export const APIFetcher = () => {

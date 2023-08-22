@@ -3,8 +3,7 @@ import { setTheme } from '../actions';
 import { Themes, getRandomTheme } from '../../utils/themes';
 import { IThemeInitialState, ITheme } from '../types';
 
-// @ts-ignore
-const themeKey: ITheme = localStorage.getItem('theme') || 'dark';
+const themeKey: ITheme = (localStorage.getItem('theme') as ITheme) || 'dark';
 
 const initialState: IThemeInitialState = {
   key: themeKey,

@@ -7,13 +7,13 @@ const router = express.Router();
 
 const filePath = process.env.USER_FILE || './storage/users.json';
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
   const content = await readFile(filePath);
   const users = JSON.parse(content);
   res.status(200).send(users);
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', async (req, res) => {
   const id: string = req.params.id;
   if (!id) {
     return res.status(400).send('Required ID is not provided.');
@@ -30,7 +30,7 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
   const { name, age } = req.body;
   if (!name || !age) {
     return res.status(400).send('Required parameters are missing.');
@@ -46,7 +46,7 @@ router.post('/', async (req, res, next) => {
   });
 });
 
-router.patch('/:id', async (req, res, next) => {
+router.patch('/:id', async (req, res) => {
   const id: string = req.params.id;
   if (!id) {
     return res.status(400).send('Required ID is not provided.');
@@ -72,7 +72,7 @@ router.patch('/:id', async (req, res, next) => {
   }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res) => {
   const id: string = req.params.id;
   if (!id) {
     return res.status(400).send('Required ID is not provided.');

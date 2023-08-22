@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { NavigateButton } from '../../components';
-import { debounce } from '../../utils';
 import { Wrapper } from './styled';
 
 export const TopBar = () => {

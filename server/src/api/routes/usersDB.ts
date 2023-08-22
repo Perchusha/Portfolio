@@ -5,7 +5,7 @@ import { getRequestMeta } from '../../utils';
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
   UserModel.find()
     .select('_id name age')
     .exec()
@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
     });
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', async (req, res) => {
   const id: string = req.params.id;
   if (!id) {
     return res.status(400).send('Required ID is not provided.');
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res, next) => {
     });
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
   const { name, age } = req.body;
   if (!name || !age) {
     return res.status(400).send('Required parameters are missing.');
@@ -75,7 +75,7 @@ router.post('/', async (req, res, next) => {
     });
 });
 
-router.patch('/:id', async (req, res, next) => {
+router.patch('/:id', async (req, res) => {
   const id: string = req.params.id;
   if (!id) {
     return res.status(400).send('Required ID is not provided.');
@@ -118,7 +118,7 @@ router.patch('/:id', async (req, res, next) => {
     });
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res) => {
   const id: string = req.params.id;
   if (!id) {
     return res.status(400).send('Required ID is not provided.');

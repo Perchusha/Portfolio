@@ -10,7 +10,11 @@ export const findById = (id: string, array: DataObject[]): DataObject | null => 
   return hashTable[id] || null;
 };
 
-export const updateElementById = (id: string, array: DataObject[], updatedData: DataObject): DataObject[] | null => {
+export const updateElementById = (
+  id: string,
+  array: DataObject[],
+  updatedData: DataObject
+): DataObject[] | null => {
   const indexToUpdate = array.findIndex(item => item.id === id);
 
   if (indexToUpdate !== -1) {
