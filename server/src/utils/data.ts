@@ -1,7 +1,7 @@
-import { DataObject, ID } from '../types';
+import { DataObject } from '../types';
 
-export const findById = (id: ID, array: DataObject[]): DataObject | null => {
-  const hashTable: Record<ID, DataObject> = {};
+export const findById = (id: string, array: DataObject[]): DataObject | null => {
+  const hashTable: Record<string, DataObject> = {};
 
   for (const obj of array) {
     hashTable[obj.id] = obj;
@@ -10,7 +10,7 @@ export const findById = (id: ID, array: DataObject[]): DataObject | null => {
   return hashTable[id] || null;
 };
 
-export const updateElementById = (id: ID, array: DataObject[], updatedData: DataObject): DataObject[] | null => {
+export const updateElementById = (id: string, array: DataObject[], updatedData: DataObject): DataObject[] | null => {
   const indexToUpdate = array.findIndex(item => item.id === id);
 
   if (indexToUpdate !== -1) {
@@ -22,7 +22,7 @@ export const updateElementById = (id: ID, array: DataObject[], updatedData: Data
   return null;
 };
 
-export const removeElementById = (id: ID, array: DataObject[]): DataObject[] | null => {
+export const removeElementById = (id: string, array: DataObject[]): DataObject[] | null => {
   const index = array.findIndex(obj => obj.id === id);
 
   if (index !== -1) {
