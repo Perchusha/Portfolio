@@ -1,7 +1,5 @@
-import { ID } from './data';
-
 export interface IUser {
-  id: ID;
+  id: string;
   name: string;
   age: number;
 }

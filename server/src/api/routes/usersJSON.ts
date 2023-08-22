@@ -1,14 +1,11 @@
 import express from 'express';
 import crypto from 'crypto';
-
-import { ID, IUser } from '../../types';
 import { findById, readFile, writeFile, removeElementById, updateElementById } from '../../utils';
+import { IUser } from '../../types';
 
 const router = express.Router();
 
 const filePath = process.env.USER_FILE || './storage/users.json';
-
-// TODO: add POSTMAN/SWAGGER documentation
 
 router.get('/', async (req, res, next) => {
   const content = await readFile(filePath);
@@ -17,9 +14,9 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/:id', async (req, res, next) => {
-  const id: ID = req.params.id; // получаем id
+  const id: string = req.params.id;
   if (!id) {
-    return res.status(400).send('Required id is not provided.');
+    return res.status(400).send('Required ID is not provided.');
   }
 
   const content = await readFile(filePath);
@@ -29,7 +26,7 @@ router.get('/:id', async (req, res, next) => {
   if (user) {
     res.status(200).send(user);
   } else {
-    res.status(404).send('User with the provided id does not exist.');
+    res.status(404).send('User with the provided ID does not exist.');
   }
 });
 
@@ -50,9 +47,9 @@ router.post('/', async (req, res, next) => {
 });
 
 router.patch('/:id', async (req, res, next) => {
-  const id: ID = req.params.id;
+  const id: string = req.params.id;
   if (!id) {
-    return res.status(400).send('Required id is not provided.');
+    return res.status(400).send('Required ID is not provided.');
   }
 
   const { name, age } = req.body;
@@ -71,14 +68,14 @@ router.patch('/:id', async (req, res, next) => {
       res.status(200).send(newUser);
     });
   } else {
-    res.status(404).send('User with the provided id does not exist.');
+    res.status(404).send('User with the provided ID does not exist.');
   }
 });
 
 router.delete('/:id', async (req, res, next) => {
-  const id: ID = req.params.id;
+  const id: string = req.params.id;
   if (!id) {
-    return res.status(400).send('Required id is not provided.');
+    return res.status(400).send('Required ID is not provided.');
   }
 
   const content = await readFile(filePath);
@@ -91,7 +88,7 @@ router.delete('/:id', async (req, res, next) => {
       res.sendStatus(200);
     });
   } else {
-    res.status(404).send('User with the provided id does not exist.');
+    res.status(404).send('User with the provided ID does not exist.');
   }
 });
 
