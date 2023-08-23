@@ -13,6 +13,8 @@ const commonStyles = {
   topBarHeight: '6vmin',
   bottomBarHeight: '6vmin',
   contentWrapperSize: '',
+  fontFamily: 'Manrope, serif',
+  borderRadius: '0.6vmin',
 };
 
 commonStyles.contentWrapperSize = `calc(100% - calc(${commonStyles.topBarHeight} + ${commonStyles.bottomBarHeight}))`;

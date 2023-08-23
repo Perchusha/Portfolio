@@ -16,7 +16,7 @@ export const Container = styled.div`
 
   svg {
     background: ${({ theme }) => `${theme.background}50`};
-    border-radius: 1vmin;
+    border-radius: ${({ theme }) => theme.borderRadius};
     padding: 0.3vmin;
     cursor: pointer;
     border: 0.1vmin solid ${({ theme }) => theme.background};

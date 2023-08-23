@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { StyledButton } from '../../components';
 import { isOperation, isNumeric, DoTheMath } from './helper';
 import { operationType } from './types';
-import { Wrapper, Container, NumPad, StyledInput } from './styled';
+import { Wrapper, Container, NumPad, CalculatorInput } from './styled';
 
 export const Calculator = () => {
   const [currentNumber, setCurrentNumber] = useState<string>('');
@@ -120,7 +120,7 @@ export const Calculator = () => {
   return (
     <Wrapper>
       <Container>
-        <StyledInput
+        <CalculatorInput
           type="string"
           value={Number(currentNumber)}
           onChange={event => event.preventDefault()}

@@ -18,6 +18,8 @@ export interface IThemeProps {
   topBarHeight: string;
   bottomBarHeight: string;
   contentWrapperSize: string;
+  fontFamily: string;
+  borderRadius: string;
 }
 
 export type IMainState = {

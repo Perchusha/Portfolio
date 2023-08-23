@@ -5,7 +5,7 @@ import { IButtonMode } from './types';
 const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   all: unset;
   padding: 1vmin 2vmin;
-  border-radius: 0.3vmin;
+  border-radius: ${({ theme }) => theme.borderRadius};
   cursor: pointer;
   user-select: none;
   transition: all 0.2s;

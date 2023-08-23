@@ -13,8 +13,8 @@ export const Wrapper = styled.div`
 export const RequestsContainer = styled.div`
   background: ${({ theme }) => theme.backgroundLight};
   padding: 2vmin 4vmin;
-  border-radius: 1vmin;
-  width: 60%;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  width: 75%;
   height: 40%;
   display: flex;
 
@@ -23,12 +23,12 @@ export const RequestsContainer = styled.div`
   }
 
   & > :not(:last-child) {
-    margin-right: 1vmin;
+    margin-right: 4vmin;
   }
 `;
 
 export const Preview = styled.div`
-  width: 50%;
+  width: 60%;
   height: 100%;
   background: white;
   overflow-y: auto;
