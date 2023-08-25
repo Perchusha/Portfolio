@@ -6,18 +6,22 @@ const commonStyles = {
   successText: '#73BB54',
   danger: '#ff515110',
   dangerText: '#ff5151',
-  fontSize: '2vmin',
-  titleSize: '4vmin',
+  fontSize: '1.6vmin',
+  titleSize: '3.2vmin',
   focus: 'rgba(255, 255, 255, 0.5)',
   active: 'rgba(255, 255, 255, 0.5)',
   topBarHeight: '6vmin',
   bottomBarHeight: '6vmin',
-  contentWrapperSize: '',
   fontFamily: 'Manrope, serif',
   borderRadius: '0.6vmin',
+  devices: {
+    mobile: '(min-width: 425px)',
+    tablet: '(min-width: 768px)',
+    laptop: '(min-width: 1024px)',
+    laptopL: '(min-width: 1440px)',
+    desktop: '(min-width: 2560px)',
+  },
 };
-
-commonStyles.contentWrapperSize = `calc(100% - calc(${commonStyles.topBarHeight} + ${commonStyles.bottomBarHeight}))`;
 
 export const Themes = {
   dark: {

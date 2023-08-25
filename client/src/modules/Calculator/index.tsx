@@ -70,7 +70,7 @@ export const Calculator = () => {
         });
       }
       setEqualCounter(prev => {
-        return (prev + 1);
+        return prev + 1;
       });
     }
   };

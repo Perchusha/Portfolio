@@ -11,7 +11,7 @@ export const TextSpan = styled.span`
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: ${({ theme }) => theme.contentWrapperSize};
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.backgroundDark};

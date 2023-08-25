@@ -17,9 +17,15 @@ export interface IThemeProps {
   active: string;
   topBarHeight: string;
   bottomBarHeight: string;
-  contentWrapperSize: string;
   fontFamily: string;
   borderRadius: string;
+  devices: {
+    mobile: string;
+    tablet: string;
+    laptop: string;
+    laptopL: string;
+    desktop: string;
+  };
 }
 
 export type IMainState = {

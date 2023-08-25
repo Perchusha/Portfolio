@@ -19,6 +19,7 @@ const inputDefault = css`
   color: ${({ theme }) => theme.primaryText};
   border: 0.1vmin solid ${({ theme }) => theme.border};
   border-radius: ${({ theme }) => theme.borderRadius};
+  font-size: ${({ theme }) => theme.fontSize};
 
   &:focus {
     box-shadow: 0 0 0 0.1vmin ${({ theme }) => theme.focus};

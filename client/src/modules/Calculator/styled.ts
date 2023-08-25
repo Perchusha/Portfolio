@@ -3,7 +3,7 @@ import { StyledInput } from '../../components/StyledForm/styled';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: ${({ theme }) => theme.contentWrapperSize};
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@ export const CalculatorInput = styled(StyledInput)`
 export const NumPad = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 2.2vmin;
+  column-gap: 1.2vmin;
   margin-top: 1vmin;
   width: 100%;
   height: 100%;

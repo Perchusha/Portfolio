@@ -11,6 +11,8 @@ const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   transition: all 0.2s;
   text-align: center;
   height: fit-content;
+  white-space: nowrap;
+  font-size: ${({ theme }) => theme.fontSize};
 
   ${({ mode, theme }) => {
     switch (mode) {

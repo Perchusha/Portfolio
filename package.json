@@ -16,7 +16,7 @@
     "lint": "yarn lint:client && yarn lint:server",
     "lint:client": "eslint --fix --ext .ts,.tsx ./client/src",
     "lint:server": "eslint --fix --ext .ts ./server/src",
-    "pre-deploy": "yarn lint:client && rimraf dist && mkdir dist && yarn build:client && cp -r client/build/. dist",
+    "pre-deploy": "yarn lint:client && rimraf dist && mkdir dist && yarn build:client && cp-cli client/build/. dist",
     "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
@@ -28,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "concurrently": "^8.2.0",
+    "cp-cli": "^2.0.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
