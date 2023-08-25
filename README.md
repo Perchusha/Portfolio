@@ -4,7 +4,7 @@ Greetings! This portfolio project consists of a client built with React and a se
 <br><br>
 The client offers three main functionalities: Calculator, Paint, and API Fetcher.
 <br><br>
-The server provides a basic API for working with mock-data. All endpoints are separated into routes and have full documentation.
+The server provides a basic API for working with MongoDB data. All endpoints are separated into routes and have full documentation.
 
 [LinkedIn: Anton Perch](https://www.linkedin.com/in/anton-perch-768578113/)
 
@@ -48,8 +48,8 @@ The server provides a basic API for working with mock-data. All endpoints are se
 2. Navigate to the project directory: `cd portfolio`.
 3. Run `yarn prepare` in root folder for installing dependencies for client and server.
 4. Run `yarn start` to start the client and server at the same time.
-5. Run `yarn start:client` to run client part of project.
-6. Run `yarn start:server` to run server part of project.
+5. Run `yarn build` to build client and server.
+6. Run `yarn lint` to lint client and server via eslint.
 
 ### Usage
 
@@ -57,14 +57,12 @@ The server provides a basic API for working with mock-data. All endpoints are se
 
 1. Start the project: In the `client` directory, run `yarn start`.
 2. Build the project: In the `client` directory, run `yarn build`.
-3. Lint the project: In the `client` directory, run `yarn lint`.
 
 #### Server
 
 1. Start the project: In the `server` directory, run `yarn start`.
 2. Start debug mode: In the `server` directory, run `yarn watch`.
 3. Build the project: In the `server` directory, run `yarn build`.
-4. Lint the project: In the `server` directory, run `yarn lint`.
 
 ## Contributing
 

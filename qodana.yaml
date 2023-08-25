@@ -1,0 +1,23 @@
+#-------------------------------------------------------------------------------#
+#               Qodana analysis is configured by qodana.yaml file               #
+#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
+#-------------------------------------------------------------------------------#
+version: "1.0"
+
+profile:
+  name: Portfolio
+include:
+  - name: ClientId
+    paths:
+      - client
+  - name: Server
+    paths:
+      - server
+
+  #Disable inspections
+exclude:
+  - name: OptimizationTests
+    paths:
+      - optimizationTests.js
+
+linter: jetbrains/qodana-js:latest

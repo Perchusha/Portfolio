@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyledButton } from '../../components';
 import { isOperation, isNumeric, DoTheMath } from './helper';
-import { operationType } from './types';
+import { operationType, functionalType } from './types';
 import { Wrapper, Container, NumPad, CalculatorInput } from './styled';
 
 export const Calculator = () => {
@@ -10,12 +10,12 @@ export const Calculator = () => {
   const [operation, setOperation] = useState<operationType | null>(null);
   const [equalCounter, setEqualCounter] = useState<number>(0);
 
-  const checkKeyboardEvent = event => {
-    const key = event.key;
+  const checkKeyboardEvent = (event: KeyboardEvent) => {
+    const key: string = event.key;
     if (isNumeric(key)) {
-      digitHandler(key);
+      digitHandler(Number(key));
     } else if (isOperation(key)) {
-      operationHandler(key);
+      operationHandler(key as operationType);
     } else if (key === '=' || key === 'Enter') {
       equalHandler();
     } else if (event.key === 'Backspace') {
@@ -32,7 +32,7 @@ export const Calculator = () => {
     };
   });
 
-  const digitHandler = value => {
+  const digitHandler = (value: number) => {
     if (equalCounter > 0) setEqualCounter(0);
 
     if (operation && !memoryNumber) {
@@ -45,7 +45,7 @@ export const Calculator = () => {
     }
   };
 
-  const operationHandler = value => {
+  const operationHandler = (value: operationType) => {
     if (notEmpty()) {
       if (operation) setMemoryNumber('');
       setOperation(value);
@@ -69,7 +69,9 @@ export const Calculator = () => {
           }
         });
       }
-      setEqualCounter(prev => (prev += 1));
+      setEqualCounter(prev => {
+        return (prev + 1);
+      });
     }
   };
 
@@ -79,7 +81,7 @@ export const Calculator = () => {
     setOperation(null);
   };
 
-  const functionalHandler = key => {
+  const functionalHandler = (key: functionalType) => {
     switch (key) {
       case 'remove': {
         if (currentNumber === '') clear();
