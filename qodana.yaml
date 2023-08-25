@@ -1,15 +1,2 @@
-#-------------------------------------------------------------------------------#
-#               Qodana analysis is configured by qodana.yaml file               #
-#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
-#-------------------------------------------------------------------------------#
 version: "1.0"
-
-profile:
-  name: Portfolio
-
-exclude:
-  - name: OptimizationTests
-    paths:
-      - optimizationTests.js
-
-linter: jetbrains/qodana-js:latest
+linter: jetbrains/qodana-js:2023.2
