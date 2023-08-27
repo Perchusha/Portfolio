@@ -438,7 +438,6 @@ export const GitHubIcon = IconHOC(
 export const ReactIcon = IconHOC(
   React.forwardRef((props: IHOCIcon, ref: React.Ref<SVGSVGElement>) => {
     const color = props.color || '#000';
-    console.log(props);
 
     return (
       <StyledSVG
