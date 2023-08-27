@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef, KeyboardEvent } from 'react';
 import { selectTheme } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
 import {
@@ -26,7 +26,7 @@ export const Paint = () => {
   const canvasRef = useRef(null);
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const clickHandler = event => {
+  const clickHandler = (event: React.MouseEvent<SVGElement> | KeyboardEvent) => {
     const id = event.currentTarget.id;
     switch (id) {
       case 'brush-icon':
@@ -42,19 +42,58 @@ export const Paint = () => {
           style={{ backgroundImage: `url(${key === 'dark' ? TransparentDark : TransparentLight})` }}
         >
           <ToolBar>
-            {/* TODO: add tooltips */}
-            <CursorIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-            <BrushIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-            <SquareIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-            <CircleIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-            <EraserIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-            <LineIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-            <PaletteIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
+            <CursorIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip="Cursor"
+            />
+            <BrushIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip={'Brush'}
+            />
+            <SquareIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip={'Square'}
+            />
+            <CircleIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip={'Circle'}
+            />
+            <EraserIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip={'Eraser'}
+            />
+            <LineIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip={'Line'}
+            />
+            <PaletteIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryText}
+              tooltip={'Palette'}
+            />
 
             <RightPart>
-              <UndoIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-              <RedoIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
-              <SaveIcon onClick={event => clickHandler(event)} color={theme.primaryText} />
+              <UndoIcon
+                onClick={event => clickHandler(event)}
+                color={theme.primaryText}
+                tooltip={'Undo changes'}
+              />
+              <RedoIcon
+                onClick={event => clickHandler(event)}
+                color={theme.primaryText}
+                tooltip={'Redo changes'}
+              />
+              <SaveIcon
+                onClick={event => clickHandler(event)}
+                color={theme.primaryText}
+                tooltip={'Save'}
+              />
             </RightPart>
           </ToolBar>
           <CanvasContainer>

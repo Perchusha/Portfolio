@@ -1,9 +1,24 @@
+import React, { useRef, KeyboardEvent } from 'react';
+import { useKeyboardListener } from '../../utils';
 import { IIcon } from './types';
 import { StyledSVG } from './styled';
 
+// TODO: add SVG factory
 export const BrushIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="brush-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -29,8 +44,20 @@ export const BrushIcon = (props: IIcon) => {
 };
 
 export const CircleIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="circle-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -54,8 +81,20 @@ export const CircleIcon = (props: IIcon) => {
 };
 
 export const EraserIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="eraser-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -79,8 +118,20 @@ export const EraserIcon = (props: IIcon) => {
 };
 
 export const PaletteIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="palette-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -234,8 +285,20 @@ export const PaletteIcon = (props: IIcon) => {
 };
 
 export const SaveIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="save-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -260,8 +323,20 @@ export const SaveIcon = (props: IIcon) => {
 };
 
 export const SquareIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="square-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -279,8 +354,20 @@ export const SquareIcon = (props: IIcon) => {
 };
 
 export const UndoIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="undo-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -305,8 +392,20 @@ export const UndoIcon = (props: IIcon) => {
 };
 
 export const RedoIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="redo-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -330,8 +429,20 @@ export const RedoIcon = (props: IIcon) => {
 };
 
 export const LineIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="line-icon"
       fill="#000000"
       width={props.width || '2.5vmin'}
@@ -354,8 +465,20 @@ export const LineIcon = (props: IIcon) => {
 };
 
 export const CursorIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="cursor-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -379,8 +502,20 @@ export const CursorIcon = (props: IIcon) => {
 };
 
 export const LinkedInIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="linkedin-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -398,8 +533,20 @@ export const LinkedInIcon = (props: IIcon) => {
 };
 
 export const GitHubIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="github-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -422,10 +569,21 @@ export const GitHubIcon = (props: IIcon) => {
 };
 
 export const ReactIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
   const color = props.color || '#000000';
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
 
   return (
     <StyledSVG
+      ref={svgRef}
       id="react-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -462,9 +620,22 @@ export const ReactIcon = (props: IIcon) => {
   );
 };
 
+// TODO: change SVG
 export const JavaScriptIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
+
   return (
     <StyledSVG
+      ref={svgRef}
       id="javascript-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
@@ -481,10 +652,21 @@ export const JavaScriptIcon = (props: IIcon) => {
 };
 
 export const NodeJSIcon = (props: IIcon) => {
+  const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
   const color = props.color || '#000000';
+
+  const onKeyDownHandler = (event: KeyboardEvent) => {
+    props.onClick && props.onClick(event);
+  };
+
+  useKeyboardListener(svgRef, {
+    Enter: onKeyDownHandler,
+    ' ': onKeyDownHandler,
+  });
 
   return (
     <StyledSVG
+      ref={svgRef}
       id="nodejs-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}

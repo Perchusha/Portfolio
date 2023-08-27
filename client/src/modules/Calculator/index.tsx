@@ -24,8 +24,10 @@ export const Calculator = () => {
   };
 
   useEffect(() => {
+    // TODO: add keyboard custom hook
     document.addEventListener('keydown', checkKeyboardEvent, false);
-    localStorage.setItem('CALC_M', localStorage.getItem('CALC_M') || '0');
+    // TODO: add localStorage
+    // localStorage.setItem('CALC_M', localStorage.getItem('CALC_M') || '0');
 
     return () => {
       document.removeEventListener('keydown', checkKeyboardEvent, false);

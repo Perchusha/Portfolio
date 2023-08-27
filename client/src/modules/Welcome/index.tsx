@@ -19,6 +19,7 @@ import {
 export const Welcome = () => {
   const { theme } = useSelector(selectTheme);
 
+  // TODO: change switch to Hash table
   const linksHandler = (service: IWelcomeRedirectServices) => {
     switch (service) {
       case 'github':
