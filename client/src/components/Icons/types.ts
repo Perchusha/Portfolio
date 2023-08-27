@@ -8,3 +8,9 @@ export interface IIcon {
   onClick?: (event: React.MouseEvent<SVGElement> | KeyboardEvent) => void;
   tooltip?: string;
 }
+
+export interface IHOCIcon extends IIcon {
+  ref: React.Ref<SVGSVGElement>;
+  // TODO: add commonAttributes type
+  commonAttributes: object;
+}
