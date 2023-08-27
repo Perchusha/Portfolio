@@ -22,6 +22,16 @@ export const Logo = styled(Link)`
   cursor: pointer;
   padding: 1vmin 2vmin;
   font-weight: 800;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: all 0.3s;
+
+  &:hover {
+    text-shadow: 0 0 0.8vmin ${({ theme }) => theme.active};
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 0.2vmin ${({ theme }) => theme.active};
+  }
 `;
 
 export const RightPart = styled.div`

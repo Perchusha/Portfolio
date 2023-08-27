@@ -4,15 +4,16 @@ import { IButtonMode } from './types';
 
 const ButtonDefaultCSS = css<{ mode: IButtonMode }>`
   all: unset;
-  padding: 1vmin 2vmin;
+  padding: 0.8vmin 1.6vmin;
   border-radius: ${({ theme }) => theme.borderRadius};
   cursor: pointer;
   user-select: none;
-  transition: all 0.2s;
+  transition: all 0.3s;
   text-align: center;
   height: fit-content;
   white-space: nowrap;
   font-size: ${({ theme }) => theme.fontSize};
+  font-weight: 400;
 
   ${({ mode, theme }) => {
     switch (mode) {

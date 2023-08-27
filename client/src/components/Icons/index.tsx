@@ -1,12 +1,14 @@
 import { IIcon } from './types';
+import { StyledSVG } from './styled';
 
 export const BrushIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="brush-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 -2 32 32"
+      tabIndex={0}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
@@ -22,17 +24,18 @@ export const BrushIcon = (props: IIcon) => {
         </g>
       </g>
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const CircleIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="circle-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
@@ -46,17 +49,18 @@ export const CircleIcon = (props: IIcon) => {
         strokeLinejoin="round"
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const EraserIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="eraser-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
@@ -70,17 +74,18 @@ export const EraserIcon = (props: IIcon) => {
       />
       <path d="M9 21H21" stroke={props.color || '#000000'} strokeWidth="2" strokeLinecap="round" />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const PaletteIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="palette-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 16 16"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       style={{ ...props.styles }}
@@ -224,17 +229,18 @@ export const PaletteIcon = (props: IIcon) => {
         }}
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const SaveIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="save-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
@@ -249,35 +255,37 @@ export const SaveIcon = (props: IIcon) => {
         strokeWidth="0.5"
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const SquareIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="square-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 330 330"
+      tabIndex={0}
       style={{ borderRadius: '25%', ...props.styles }}
       onClick={props.onClick}
     >
       <rect width="330px" height="330px" fill={props.color || '#000000'} />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const UndoIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="undo-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
@@ -292,16 +300,18 @@ export const UndoIcon = (props: IIcon) => {
         transform="scale(-1,1) translate(-24,0)"
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
+
 export const RedoIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="redo-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
@@ -315,18 +325,19 @@ export const RedoIcon = (props: IIcon) => {
         strokeLinejoin="round"
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const LineIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="line-icon"
       fill="#000000"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
       onClick={props.onClick}
@@ -338,17 +349,18 @@ export const LineIcon = (props: IIcon) => {
         strokeWidth="0.5"
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const CursorIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="cursor-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 24 24"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       style={{ ...props.styles }}
@@ -362,35 +374,37 @@ export const CursorIcon = (props: IIcon) => {
         strokeLinejoin="round"
       />
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const LinkedInIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="linkedin-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       fill={props.color || '#000000'}
       viewBox="0 0 32 32"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
       onClick={props.onClick}
     >
       <path d="M28.778 1.004h-25.56c-0.008-0-0.017-0-0.027-0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019-0 0.029-0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577-0.001 0-0.002 0-0.003 0h0zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 0.061 0 0.121 0.001 0.181 0.003l-0.009-0c4.5 0 5.332 2.962 5.332 6.817v7.855z"></path>
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const GitHubIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="github-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 20 20"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
       onClick={props.onClick}
@@ -403,7 +417,7 @@ export const GitHubIcon = (props: IIcon) => {
         </g>
       </g>
       <title>{props.tooltip || ''}</title>
-    </svg>
+    </StyledSVG>
   );
 };
 
@@ -411,11 +425,12 @@ export const ReactIcon = (props: IIcon) => {
   const color = props.color || '#000000';
 
   return (
-    <svg
+    <StyledSVG
       id="react-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       viewBox="0 0 16 16"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       style={{ ...props.styles }}
@@ -443,24 +458,25 @@ export const ReactIcon = (props: IIcon) => {
         d="M9.45925 8.06618C9.45925 8.81694 8.85063 9.42556 8.09987 9.42556C7.34911 9.42556 6.7405 8.81694 6.7405 8.06618C6.7405 7.31542 7.34911 6.70681 8.09987 6.70681C8.85063 6.70681 9.45925 7.31542 9.45925 8.06618Z"
         fill={color}
       />
-    </svg>
+    </StyledSVG>
   );
 };
 
 export const JavaScriptIcon = (props: IIcon) => {
   return (
-    <svg
+    <StyledSVG
       id="javascript-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       fill={props.color || '#000000'}
       viewBox="0 0 13 13"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
       onClick={props.onClick}
     >
       <path d="M 11.714286,1 2.285714,1 C 1.575893,1 1,1.57589 1,2.28571 l 0,9.42858 C 1,12.42411 1.575893,13 2.285714,13 l 9.428572,0 C 12.424107,13 13,12.42411 13,11.71429 L 13,2.28571 C 13,1.57589 12.424107,1 11.714286,1 Z m -4.183929,9.35893 c 0,1.16786 -0.685714,1.70089 -1.684821,1.70089 -0.902679,0 -1.425,-0.46607 -1.692857,-1.03125 l 0.91875,-0.55446 c 0.176785,0.31339 0.3375,0.57857 0.725892,0.57857 0.369643,0 0.605358,-0.14464 0.605358,-0.70982 l 0,-3.83304 1.127678,0 0,3.84911 z m 2.667857,1.70089 c -1.047321,0 -1.725,-0.49821 -2.054464,-1.15178 L 9.0625,10.37768 c 0.241071,0.39375 0.557143,0.68571 1.111607,0.68571 0.466072,0 0.766072,-0.23303 0.766072,-0.55714 0,-0.38571 -0.305358,-0.52232 -0.822322,-0.75 L 9.836607,9.63571 C 9.022321,9.29018 8.483929,8.85357 8.483929,7.93482 c 0,-0.84643 0.645535,-1.48928 1.65,-1.48928 0.717857,0 1.232142,0.2491 1.601785,0.90267 l -0.878571,0.5625 C 10.664286,7.56518 10.455357,7.42857 10.13125,7.42857 c -0.329464,0 -0.538393,0.20893 -0.538393,0.48214 0,0.3375 0.208929,0.47411 0.69375,0.68572 l 0.28125,0.12053 c 0.958929,0.40983 1.497322,0.83036 1.497322,1.77322 0,1.0125 -0.798215,1.56964 -1.866965,1.56964 z" />
-    </svg>
+    </StyledSVG>
   );
 };
 
@@ -468,12 +484,13 @@ export const NodeJSIcon = (props: IIcon) => {
   const color = props.color || '#000000';
 
   return (
-    <svg
+    <StyledSVG
       id="nodejs-icon"
       width={props.width || '2.5vmin'}
       height={props.height || '2.5vmin'}
       fill={props.color || '#000000'}
       viewBox="0 0 30 30"
+      tabIndex={0}
       xmlns="http://www.w3.org/2000/svg"
       style={{ ...props.styles }}
       onClick={props.onClick}
@@ -486,6 +503,6 @@ export const NodeJSIcon = (props: IIcon) => {
         d="M22.5419 11.2062C21.1452 10.459 19.4836 10.4192 17.9315 10.5169C16.8102 10.6277 15.6309 10.9371 14.814 11.7409C13.9761 12.5489 13.7937 13.8537 14.1917 14.9085C14.4769 15.6539 15.1948 16.1386 15.9372 16.395C16.8935 16.7326 17.8979 16.837 18.9026 16.9414C19.819 17.0366 20.7357 17.1319 21.6165 17.4042C21.9763 17.5234 22.3953 17.7058 22.5055 18.0973C22.6073 18.5609 22.4957 19.0998 22.1193 19.4219C20.9237 20.3682 17.5979 20.2232 16.4166 19.4784C15.939 19.1611 15.7332 18.5994 15.6495 18.0641C15.6402 17.8973 15.5059 17.7443 15.3248 17.757C14.8713 17.7516 14.4178 17.7528 13.9643 17.7564C13.8061 17.7431 13.6416 17.8557 13.6329 18.0172C13.5397 20.4689 15.7914 21.5377 17.9039 21.773C19.1108 21.888 20.3442 21.8814 21.5327 21.6224C22.4261 21.419 23.3219 21.0444 23.9369 20.3563C24.6953 19.52 24.8444 18.2749 24.5043 17.2332C24.2443 16.4559 23.5012 15.9573 22.7416 15.7008C21.7086 15.3466 20.4844 15.1562 19.5488 15.0671C18.1889 14.9376 16.5729 14.9905 16.188 14.0969C16.0345 13.629 16.1651 13.048 16.5951 12.7602C17.7328 11.9885 20.0483 12.091 21.2265 12.6675C21.7675 12.9384 22.081 13.4948 22.2104 14.0565C22.2344 14.2215 22.3454 14.3937 22.5364 14.3865C22.9868 14.3955 23.4372 14.3889 23.8875 14.3895C24.0422 14.4003 24.2116 14.313 24.2418 14.1546C24.2227 12.9806 23.6232 11.7788 22.5419 11.2062Z"
         fill={color}
       />
-    </svg>
+    </StyledSVG>
   );
 };

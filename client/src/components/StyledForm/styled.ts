@@ -12,8 +12,6 @@ export const Form = styled.form`
 const inputDefault = css`
   padding: 0.5vmin 1vmin;
   font-family: Manrope, serif;
-  font-weight: 700;
-  font-style: normal;
   width: 100%;
   background: ${({ theme }) => theme.backgroundDark};
   color: ${({ theme }) => theme.primaryText};

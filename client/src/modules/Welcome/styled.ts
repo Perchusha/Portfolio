@@ -32,6 +32,7 @@ export const TextContent = styled.div`
 
 export const TitleSpan = styled.span`
   margin-bottom: 2vmin;
+  font-weight: 700;
   font-size: ${({ theme }) => theme.titleSize};
 `;
 

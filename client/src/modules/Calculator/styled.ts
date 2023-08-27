@@ -44,5 +44,6 @@ export const NumPad = styled.div`
 
   button {
     width: 100%;
+    font-weight: 700;
   }
 `;

@@ -5,6 +5,6 @@ export interface IIcon {
   height?: string;
   color?: string;
   styles?: React.CSSProperties;
-  onClick?: (args) => void;
+  onClick?: (event: React.MouseEvent<SVGElement>) => void;
   tooltip?: string;
 }
