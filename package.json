@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "yarn lint"
+      "pre-deploy && yarn deploy"
     ]
   },
   "devDependencies": {

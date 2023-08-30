@@ -1,6 +1,6 @@
 import React, { KeyboardEvent, useRef } from 'react';
 import { useKeyboardListener } from '../../utils';
-import { IIcon, IHOCIcon } from './types';
+import { IIcon, IHOCIcon, CommonAttrs } from './types';
 
 const IconHOC = (IconComponent: React.ComponentType<IHOCIcon>) => (props: IIcon) => {
   const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
@@ -14,10 +14,17 @@ const IconHOC = (IconComponent: React.ComponentType<IHOCIcon>) => (props: IIcon)
     ' ': onKeyDownHandler,
   });
 
-  // TODO: add SVG common attributes
-  const commonAttributes = {};
+  const commonAttributes: CommonAttrs = {
+    ref: svgRef,
+    width: props.width || '2.5vmin',
+    height: props.height || '2.5vmin',
+    tabIndex: 0,
+    xmlns: 'http://www.w3.org/2000/svg',
+    style: { ...props.styles },
+    onClick: props.onClick,
+  };
 
-  return <IconComponent ref={svgRef} {...props} commonAttributes={{ ...commonAttributes }} />;
+  return <IconComponent {...props} commonAttributes={{ ...commonAttributes }} />;
 };
 
 export default IconHOC;

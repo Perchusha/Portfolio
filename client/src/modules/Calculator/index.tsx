@@ -71,9 +71,7 @@ export const Calculator = () => {
           }
         });
       }
-      setEqualCounter(prev => {
-        return prev + 1;
-      });
+      setEqualCounter(prev => prev + 1);
     }
   };
 

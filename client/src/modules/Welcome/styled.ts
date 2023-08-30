@@ -28,10 +28,13 @@ export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  & > *:not(:last-child) {
+    margin-bottom: 2vmin;
+  }
 `;
 
 export const TitleSpan = styled.span`
-  margin-bottom: 2vmin;
   font-weight: 700;
   font-size: ${({ theme }) => theme.titleSize};
 `;

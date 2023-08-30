@@ -19,25 +19,16 @@ import {
 export const Welcome = () => {
   const { theme } = useSelector(selectTheme);
 
-  // TODO: change switch to Hash table
+  const urls = {
+    github: 'https://github.com/Perchusha',
+    linkedin: 'https://www.linkedin.com/in/anton-perch-768578113',
+    react: 'https://react.dev/',
+    javascript: 'https://developer.mozilla.org/docs/Web/JavaScript',
+    nodejs: 'https://nodejs.org/',
+  };
+
   const linksHandler = (service: IWelcomeRedirectServices) => {
-    switch (service) {
-      case 'github':
-        window.open('https://github.com/Perchusha', '_blank');
-        break;
-      case 'linkedin':
-        window.open('https://www.linkedin.com/in/anton-perch-768578113', '_blank');
-        break;
-      case 'react':
-        window.open('https://react.dev/', '_blank');
-        break;
-      case 'javascript':
-        window.open('https://developer.mozilla.org/docs/Web/JavaScript', '_blank');
-        break;
-      case 'nodejs':
-        window.open('https://nodejs.org/', '_blank');
-        break;
-    }
+    if (urls[service]) window.open(urls[service], '_blank');
   };
 
   return (

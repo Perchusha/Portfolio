@@ -9,8 +9,16 @@ export interface IIcon {
   tooltip?: string;
 }
 
+export interface CommonAttrs {
+  ref: React.RefObject<SVGSVGElement>;
+  width: string;
+  height: string;
+  tabIndex: number;
+  xmlns: string;
+  style?: React.CSSProperties;
+  onClick?: (event: React.MouseEvent<SVGElement> | KeyboardEvent) => void;
+}
+
 export interface IHOCIcon extends IIcon {
-  ref: React.Ref<SVGSVGElement>;
-  // TODO: add commonAttributes type
-  commonAttributes: object;
+  commonAttributes: CommonAttrs;
 }
