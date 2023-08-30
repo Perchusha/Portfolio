@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { StyledButton } from '../../components';
 import { isOperation, isNumeric, DoTheMath } from './helper';
 import { operationType, functionalType } from './types';
@@ -24,10 +24,7 @@ export const Calculator = () => {
   };
 
   useEffect(() => {
-    // TODO: add keyboard custom hook
     document.addEventListener('keydown', checkKeyboardEvent, false);
-    // TODO: add localStorage
-    // localStorage.setItem('CALC_M', localStorage.getItem('CALC_M') || '0');
 
     return () => {
       document.removeEventListener('keydown', checkKeyboardEvent, false);

@@ -1,5 +1,5 @@
 import React from 'react';
 
 export interface IRequestForm {
-  previewRef: React.RefObject<HTMLElement>;
+  previewRef: React.RefObject<HTMLDivElement>;
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { StyledForm, StyledButton } from '../../components';
-import { StyledInput, StyledSelect } from '../../components/StyledForm/styled';
+import { StyledForm, StyledButton, StyledInput, StyledSelect } from '../../components';
 import { IRequestForm } from './types';
 
 export const RequestForm = ({ previewRef }: IRequestForm) => {

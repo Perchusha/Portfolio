@@ -1,11 +1,11 @@
-import React, { KeyboardEvent } from 'react';
+import React from 'react';
 
 export interface IIcon {
   width?: string;
   height?: string;
   color?: string;
   styles?: React.CSSProperties;
-  onClick?: (event: React.MouseEvent<SVGElement> | KeyboardEvent) => void;
+  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
   tooltip?: string;
 }
 
@@ -16,7 +16,7 @@ export interface CommonAttrs {
   tabIndex: number;
   xmlns: string;
   style?: React.CSSProperties;
-  onClick?: (event: React.MouseEvent<SVGElement> | KeyboardEvent) => void;
+  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
 }
 
 export interface IHOCIcon extends IIcon {

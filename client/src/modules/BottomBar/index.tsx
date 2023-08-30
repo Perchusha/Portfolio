@@ -1,9 +1,9 @@
-import { Wrapper } from './styled';
-import { StyledButton } from '../../components';
+import { useDispatch, useSelector } from 'react-redux';
 import { ITheme } from '../../redux/types';
 import { setTheme } from '../../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
 import { selectTheme } from '../../redux/selectors';
+import { StyledButton } from '../../components';
+import { Wrapper } from './styled';
 
 export const BottomBar = () => {
   const { key } = useSelector(selectTheme);

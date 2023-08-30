@@ -1,11 +1,11 @@
-import React, { KeyboardEvent, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useKeyboardListener } from '../../utils';
 import { IIcon, IHOCIcon, CommonAttrs } from './types';
 
 const IconHOC = (IconComponent: React.ComponentType<IHOCIcon>) => (props: IIcon) => {
   const svgRef: React.RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
 
-  const onKeyDownHandler = (event: KeyboardEvent) => {
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
     props.onClick && props.onClick(event);
   };
 

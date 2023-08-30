@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { IModal } from './types';
 import { Wrapper, ModalContainer } from './styled';
 
@@ -15,7 +15,7 @@ export const Modal = ({
     if (show) onOpen();
   }, [show]);
 
-  const closeHandler = event => {
+  const closeHandler = (event: React.MouseEvent) => {
     if (event.target === modalRef.current) onClose();
   };
 

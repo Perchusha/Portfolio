@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledInput } from '../../components/StyledForm/styled';
+import { StyledInput } from '../../components';
 
 export const Wrapper = styled.div`
   width: 100%;

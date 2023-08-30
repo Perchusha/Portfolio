@@ -1,10 +1,9 @@
 import React from 'react';
-import { HashRouter, BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectTheme } from './redux/selectors';
 import { ThemeProvider } from 'styled-components';
-import { Welcome, TopBar, Calculator, Paint, APIFetcher } from './modules';
-import { BottomBar } from './modules/BottomBar';
+import { HashRouter, BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { selectTheme } from './redux/selectors';
+import { Welcome, TopBar, Calculator, Paint, APIFetcher, BottomBar } from './modules';
 
 const App = () => {
   const { theme } = useSelector(selectTheme);

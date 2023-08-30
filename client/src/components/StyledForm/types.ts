@@ -1,3 +1,3 @@
-import { FormHTMLAttributes } from 'react';
+import React from 'react';
 
-export interface IStyledForm extends FormHTMLAttributes<HTMLFormElement> {}
+export interface IStyledForm extends React.FormHTMLAttributes<HTMLFormElement> {}

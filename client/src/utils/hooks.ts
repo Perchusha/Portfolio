@@ -1,15 +1,17 @@
-import { useEffect, RefObject, KeyboardEvent } from 'react';
+import React, { useEffect } from 'react';
 
 type KeyCallbackMap = {
-  [key: string]: (event: KeyboardEvent) => void;
+  [key: string]: (event: React.KeyboardEvent) => void;
 };
 
 export const useKeyboardListener = (
-  ref: RefObject<SVGSVGElement | HTMLElement>,
+  ref: React.RefObject<
+    SVGSVGElement | HTMLButtonElement | HTMLInputElement | HTMLSelectElement | HTMLDivElement
+  >,
   keyCallbackMap: KeyCallbackMap
 ) => {
   useEffect(() => {
-    const handleKeyDown = ((event: KeyboardEvent) => {
+    const handleKeyDown = ((event: React.KeyboardEvent) => {
       const callback = keyCallbackMap[event.key];
       if (callback) {
         callback(event);

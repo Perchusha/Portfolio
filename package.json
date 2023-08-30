@@ -19,9 +19,14 @@
     "pre-deploy": "yarn lint:client && rimraf dist && mkdir dist && yarn build:client && cp-cli client/build/. dist",
     "deploy": "gh-pages -d dist"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "pre-deploy && yarn deploy"
+      "yarn pre-deploy && yarn deploy"
     ]
   },
   "devDependencies": {

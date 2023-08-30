@@ -1,7 +1,9 @@
-import React, { useState, useRef, KeyboardEvent } from 'react';
-import { selectTheme } from '../../redux/selectors';
+import React, { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { selectTheme } from '../../redux/selectors';
 import {
+  Modal,
+  Canvas,
   BrushIcon,
   CircleIcon,
   EraserIcon,
@@ -11,8 +13,6 @@ import {
   RedoIcon,
   UndoIcon,
   LineIcon,
-  Modal,
-  Canvas,
   CursorIcon,
 } from '../../components';
 import { Wrapper, Container, ToolBar, RightPart, CanvasContainer } from './styled';
@@ -26,7 +26,7 @@ export const Paint = () => {
   const canvasRef = useRef(null);
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const clickHandler = (event: React.MouseEvent<SVGElement> | KeyboardEvent) => {
+  const clickHandler = (event: React.MouseEvent | React.KeyboardEvent) => {
     const id = event.currentTarget.id;
     switch (id) {
       case 'brush-icon':
