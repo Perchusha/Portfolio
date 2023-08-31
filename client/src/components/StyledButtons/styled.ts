@@ -16,7 +16,8 @@ const ButtonDefaultCSS = css`
   font-weight: 400;
 
   &:hover {
-    filter: brightness(70%);
+    box-shadow: 0 0 0 0.1vmin ${({ theme }) => theme.active};
+    filter: brightness(80%);
   }
 
   &:focus-visible {

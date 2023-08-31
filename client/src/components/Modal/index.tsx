@@ -9,6 +9,7 @@ export const Modal = ({
   onClose = () => {},
   styles,
 }: IModal) => {
+  // TODO: move MODAL to PORTAL
   const modalRef = useRef(null);
 
   useEffect(() => {
