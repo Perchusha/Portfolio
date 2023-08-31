@@ -16,8 +16,8 @@
     "lint": "yarn lint:client && yarn lint:server",
     "lint:client": "eslint --fix --ext .ts,.tsx ./client/src",
     "lint:server": "eslint --fix --ext .ts ./server/src",
-    "pre-deploy": "yarn lint:client && rimraf dist && mkdir dist && yarn build:client && cp-cli client/build/. dist",
-    "deploy": "gh-pages -d dist"
+    "pre-deploy": "yarn lint:client && yarn build:client",
+    "deploy": "gh-pages -d client/build"
   },
   "husky": {
     "hooks": {
@@ -41,7 +41,6 @@
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.2",
-    "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
   }
 }
