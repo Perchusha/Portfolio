@@ -14,10 +14,6 @@ export const StyledButton = ({
   );
 };
 
-export const NavigateButton = ({ children, mode = 'base', ...props }: INavigatorButtonProps) => {
-  return (
-    <Navigate mode={mode} {...props}>
-      {children}
-    </Navigate>
-  );
+export const NavigateButton = ({ children, ...props }: INavigatorButtonProps) => {
+  return <Navigate {...props}>{children}</Navigate>;
 };

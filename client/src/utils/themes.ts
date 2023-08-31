@@ -30,7 +30,7 @@ export const Themes = {
     primaryText: '#ffffff',
     background: '#353533',
     backgroundLight: '#484846',
-    backgroundDark: '#353533',
+    backgroundDark: '#252522',
     border: '#484846',
     ...commonStyles,
   },

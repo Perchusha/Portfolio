@@ -9,6 +9,4 @@ export interface IStyledButtonProps extends React.ButtonHTMLAttributes<HTMLButto
   $active?: boolean;
 }
 
-export interface INavigatorButtonProps extends LinkProps {
-  mode?: IButtonMode;
-}
+export interface INavigatorButtonProps extends LinkProps {}
