@@ -1,1 +1,2 @@
-export * from './Elements';
+export * from './elements';
+export * from './theme';

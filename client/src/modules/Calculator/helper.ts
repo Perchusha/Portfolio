@@ -1,3 +1,4 @@
+import Decimal from 'decimal.js';
 import { operationType } from './types';
 
 export const isNumeric = (value: string) => {
@@ -9,17 +10,17 @@ export const isOperation = (value: string) => {
 };
 
 export const DoTheMath = (firstValue: string, secondValue: string, operation: operationType) => {
-  const firstNumber = Number(firstValue);
-  const secondNumber = Number(secondValue);
+  const firstNumber = new Decimal(firstValue);
+  const secondNumber = new Decimal(secondValue);
 
   switch (operation) {
     case '*':
-      return firstNumber * secondNumber;
+      return firstNumber.mul(secondNumber);
     case '/':
-      return firstNumber / secondNumber;
+      return firstNumber.div(secondNumber);
     case '+':
-      return firstNumber + secondNumber;
+      return firstNumber.plus(secondNumber);
     case '-':
-      return firstNumber - secondNumber;
+      return firstNumber.minus(secondNumber);
   }
 };
