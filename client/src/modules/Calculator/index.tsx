@@ -5,6 +5,7 @@ import { operationType, functionalType } from './types';
 import { Wrapper, Container, NumPad, CalculatorInput } from './styled';
 
 export const Calculator = () => {
+  // TODO: add 1 more string with current math state
   const [currentNumber, setCurrentNumber] = useState<string>('');
   const [memoryNumber, setMemoryNumber] = useState<string>('');
   const [operation, setOperation] = useState<operationType | null>(null);
@@ -135,23 +136,31 @@ export const Calculator = () => {
           <StyledButton onClick={() => digitHandler(1)}>1</StyledButton>
           <StyledButton onClick={() => digitHandler(2)}>2</StyledButton>
           <StyledButton onClick={() => digitHandler(3)}>3</StyledButton>
-          <StyledButton onClick={() => operationHandler('/')}>/</StyledButton>
+          <StyledButton onClick={() => operationHandler('/')} $active={operation === '/'}>
+            /
+          </StyledButton>
 
           <StyledButton onClick={() => digitHandler(4)}>4</StyledButton>
           <StyledButton onClick={() => digitHandler(5)}>5</StyledButton>
           <StyledButton onClick={() => digitHandler(6)}>6</StyledButton>
-          <StyledButton onClick={() => operationHandler('*')}>*</StyledButton>
+          <StyledButton onClick={() => operationHandler('*')} $active={operation === '*'}>
+            *
+          </StyledButton>
 
           <StyledButton onClick={() => digitHandler(7)}>7</StyledButton>
           <StyledButton onClick={() => digitHandler(8)}>8</StyledButton>
           <StyledButton onClick={() => digitHandler(9)}>9</StyledButton>
-          <StyledButton onClick={() => operationHandler('-')}>-</StyledButton>
+          <StyledButton onClick={() => operationHandler('-')} $active={operation === '-'}>
+            -
+          </StyledButton>
 
           <StyledButton onClick={() => digitHandler(0)}>0</StyledButton>
           <StyledButton value="fractional" onClick={() => functionalHandler('fractional')}>
             .
           </StyledButton>
-          <StyledButton onClick={() => operationHandler('+')}>+</StyledButton>
+          <StyledButton onClick={() => operationHandler('+')} $active={operation === '+'}>
+            +
+          </StyledButton>
 
           <StyledButton value="equals" onClick={equalHandler}>
             =
