@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledSVG = styled.svg`
+  transition: all 0.3s;
+
   &:hover {
     filter: brightness(0.5);
   }

@@ -29,7 +29,7 @@ export interface IThemeProps {
 }
 
 export type IMainState = {
-  Theme: { key: ITheme; theme: IThemeProps };
+  Theme: IThemeInitialState;
 };
 
 export interface IThemeInitialState {
