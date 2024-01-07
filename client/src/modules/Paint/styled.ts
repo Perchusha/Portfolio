@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 80vw;
-  height: 80vmin;
+  height: 80vh;
   border: 0.1vmin solid ${({ theme }) => theme.border};
 
   svg {
