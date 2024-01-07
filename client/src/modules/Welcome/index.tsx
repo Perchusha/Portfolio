@@ -4,7 +4,6 @@ import { LinkedInIcon, GitHubIcon, ReactIcon, JavaScriptIcon, NodeJSIcon } from 
 import Photo from '../../assets/Me.jpg';
 import { IWelcomeRedirectServices } from './types';
 import {
-  Wrapper,
   TitleSpan,
   TextSpan,
   Content,
@@ -33,44 +32,39 @@ export const Welcome = () => {
   };
 
   return (
-    <Wrapper>
-      <Content>
-        <Info>
-          <TextContent>
-            <TitleSpan>Senior Front-End Engineer 👋🏻</TitleSpan>
-            <TextSpan>
-              Hello! My name is Anton Perch, I am a Senior Full-Stack engineer based in Warsaw,
-              Poland 📍
-            </TextSpan>
-            <DescriptionSpan>
-              This portfolio is just a small project to catch your attention. Its purpose is not to
-              demonstrate how skilled I am (you will figure that out on your own). It is meant for
-              me to occasionally practice solving various tasks that come to mind.
-            </DescriptionSpan>
-            <LinksContainer>
-              <LinkedInIcon
-                onClick={() => linksHandler('linkedin')}
-                color={theme.primaryTextColor}
-              />
-              <GitHubIcon onClick={() => linksHandler('github')} color={theme.primaryTextColor} />
-            </LinksContainer>
-          </TextContent>
-          <PhotoContainer>
-            <img src={Photo} alt="It's me" />
-          </PhotoContainer>
-        </Info>
-        <TechStackContainer>
-          <TextSpan>Main Tech Stack:</TextSpan>
-          <TechImages>
-            <ReactIcon onClick={() => linksHandler('react')} color={theme.primaryTextColor} />
-            <JavaScriptIcon
-              onClick={() => linksHandler('javascript')}
-              color={theme.primaryTextColor}
-            />
-            <NodeJSIcon onClick={() => linksHandler('nodejs')} color={theme.primaryTextColor} />
-          </TechImages>
-        </TechStackContainer>
-      </Content>
-    </Wrapper>
+    <Content>
+      <Info>
+        <TextContent>
+          <TitleSpan>Senior Front-End Engineer 👋🏻</TitleSpan>
+          <TextSpan>
+            Hello! My name is Anton Perch, I am a Senior Full-Stack engineer based in Warsaw, Poland
+            📍
+          </TextSpan>
+          <DescriptionSpan>
+            This portfolio is just a small project to catch your attention. Its purpose is not to
+            demonstrate how skilled I am (you will figure that out on your own). It is meant for me
+            to occasionally practice solving various tasks that come to mind.
+          </DescriptionSpan>
+          <LinksContainer>
+            <LinkedInIcon onClick={() => linksHandler('linkedin')} color={theme.primaryTextColor} />
+            <GitHubIcon onClick={() => linksHandler('github')} color={theme.primaryTextColor} />
+          </LinksContainer>
+        </TextContent>
+        <PhotoContainer>
+          <img src={Photo} alt="It's me" />
+        </PhotoContainer>
+      </Info>
+      <TechStackContainer>
+        <TextSpan>Main Tech Stack:</TextSpan>
+        <TechImages>
+          <ReactIcon onClick={() => linksHandler('react')} color={theme.primaryTextColor} />
+          <JavaScriptIcon
+            onClick={() => linksHandler('javascript')}
+            color={theme.primaryTextColor}
+          />
+          <NodeJSIcon onClick={() => linksHandler('nodejs')} color={theme.primaryTextColor} />
+        </TechImages>
+      </TechStackContainer>
+    </Content>
   );
 };

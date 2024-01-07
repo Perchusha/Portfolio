@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { RequestForm } from './RequestForm';
-import { Wrapper, RequestsContainer, RequestsPreview, SocketPreview } from './styled';
+import { RequestsContainer, RequestsPreview, SocketPreview } from './styled';
 
 export const APIFetcher = () => {
   const requestPreviewRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ export const APIFetcher = () => {
   }, [socketListening]);
 
   return (
-    <Wrapper>
+    <>
       <RequestsContainer>
         <RequestForm previewRef={requestPreviewRef} />
         <RequestsPreview ref={requestPreviewRef} />
@@ -30,6 +30,6 @@ export const APIFetcher = () => {
       <RequestsContainer>
         <SocketPreview ref={socketPreviewRef} />
       </RequestsContainer>
-    </Wrapper>
+    </>
   );
 };

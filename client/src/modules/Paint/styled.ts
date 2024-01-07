@@ -1,10 +1,7 @@
 import styled from 'styled-components';
-import { MainFrameContainer } from '../../styled';
-
-export const Wrapper = styled(MainFrameContainer)``;
 
 export const Container = styled.div`
-  width: 160vmin;
+  width: 80vw;
   height: 80vmin;
   border: 0.1vmin solid ${({ theme }) => theme.border};
 
@@ -22,8 +19,9 @@ export const Container = styled.div`
 `;
 
 export const ToolBar = styled.div`
+  height: 4vmin;
   background: ${({ theme }) => theme.backgroundLight};
-  padding: 1vmin 2vmin;
+  padding: 0 2vmin;
   border-bottom: 0.1vmin solid ${({ theme }) => theme.border};
   display: flex;
   align-items: center;
@@ -36,7 +34,7 @@ export const RightPart = styled.div`
 `;
 
 export const CanvasContainer = styled.div`
-  height: calc(100% - 4.1vmin);
+  height: calc(100% - 4vmin);
   position: relative;
   overflow: hidden;
 `;

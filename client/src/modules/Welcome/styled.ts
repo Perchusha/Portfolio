@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import { MainFrameContainer } from '../../styled';
-
-export const Wrapper = styled(MainFrameContainer)``;
 
 export const Content = styled.div`
   width: 50%;

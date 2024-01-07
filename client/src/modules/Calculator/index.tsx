@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { StyledButton } from '../../components';
 import { isOperation, isNumeric, DoTheMath } from './helper';
 import { operationType, functionalType } from './types';
-import { Wrapper, Container, NumPad, CalculatorInput } from './styled';
+import { Container, NumPad, CalculatorInput } from './styled';
 
 export const Calculator = () => {
   // TODO: add 1 more string with current math state
@@ -118,55 +118,53 @@ export const Calculator = () => {
   };
 
   return (
-    <Wrapper>
-      <Container>
-        <CalculatorInput
-          type="string"
-          value={Number(currentNumber)}
-          onChange={event => event.preventDefault()}
-        />
-        <NumPad>
-          <StyledButton onClick={() => functionalHandler('clear')}>
-            {notEmpty() ? 'C' : 'AC'}
-          </StyledButton>
-          <StyledButton onClick={() => functionalHandler('reverse')}>+/-</StyledButton>
-          <StyledButton onClick={() => functionalHandler('percent')}>%</StyledButton>
-          <StyledButton onClick={() => functionalHandler('remove')}>{'<'}</StyledButton>
+    <Container>
+      <CalculatorInput
+        type="string"
+        value={Number(currentNumber)}
+        onChange={event => event.preventDefault()}
+      />
+      <NumPad>
+        <StyledButton onClick={() => functionalHandler('clear')}>
+          {notEmpty() ? 'C' : 'AC'}
+        </StyledButton>
+        <StyledButton onClick={() => functionalHandler('reverse')}>+/-</StyledButton>
+        <StyledButton onClick={() => functionalHandler('percent')}>%</StyledButton>
+        <StyledButton onClick={() => functionalHandler('remove')}>{'<'}</StyledButton>
 
-          <StyledButton onClick={() => digitHandler(1)}>1</StyledButton>
-          <StyledButton onClick={() => digitHandler(2)}>2</StyledButton>
-          <StyledButton onClick={() => digitHandler(3)}>3</StyledButton>
-          <StyledButton onClick={() => operationHandler('/')} $active={operation === '/'}>
-            /
-          </StyledButton>
+        <StyledButton onClick={() => digitHandler(1)}>1</StyledButton>
+        <StyledButton onClick={() => digitHandler(2)}>2</StyledButton>
+        <StyledButton onClick={() => digitHandler(3)}>3</StyledButton>
+        <StyledButton onClick={() => operationHandler('/')} $active={operation === '/'}>
+          /
+        </StyledButton>
 
-          <StyledButton onClick={() => digitHandler(4)}>4</StyledButton>
-          <StyledButton onClick={() => digitHandler(5)}>5</StyledButton>
-          <StyledButton onClick={() => digitHandler(6)}>6</StyledButton>
-          <StyledButton onClick={() => operationHandler('*')} $active={operation === '*'}>
-            *
-          </StyledButton>
+        <StyledButton onClick={() => digitHandler(4)}>4</StyledButton>
+        <StyledButton onClick={() => digitHandler(5)}>5</StyledButton>
+        <StyledButton onClick={() => digitHandler(6)}>6</StyledButton>
+        <StyledButton onClick={() => operationHandler('*')} $active={operation === '*'}>
+          *
+        </StyledButton>
 
-          <StyledButton onClick={() => digitHandler(7)}>7</StyledButton>
-          <StyledButton onClick={() => digitHandler(8)}>8</StyledButton>
-          <StyledButton onClick={() => digitHandler(9)}>9</StyledButton>
-          <StyledButton onClick={() => operationHandler('-')} $active={operation === '-'}>
-            -
-          </StyledButton>
+        <StyledButton onClick={() => digitHandler(7)}>7</StyledButton>
+        <StyledButton onClick={() => digitHandler(8)}>8</StyledButton>
+        <StyledButton onClick={() => digitHandler(9)}>9</StyledButton>
+        <StyledButton onClick={() => operationHandler('-')} $active={operation === '-'}>
+          -
+        </StyledButton>
 
-          <StyledButton onClick={() => digitHandler(0)}>0</StyledButton>
-          <StyledButton value="fractional" onClick={() => functionalHandler('fractional')}>
-            .
-          </StyledButton>
-          <StyledButton onClick={() => operationHandler('+')} $active={operation === '+'}>
-            +
-          </StyledButton>
+        <StyledButton onClick={() => digitHandler(0)}>0</StyledButton>
+        <StyledButton value="fractional" onClick={() => functionalHandler('fractional')}>
+          .
+        </StyledButton>
+        <StyledButton onClick={() => operationHandler('+')} $active={operation === '+'}>
+          +
+        </StyledButton>
 
-          <StyledButton value="equals" onClick={equalHandler}>
-            =
-          </StyledButton>
-        </NumPad>
-      </Container>
-    </Wrapper>
+        <StyledButton value="equals" onClick={equalHandler}>
+          =
+        </StyledButton>
+      </NumPad>
+    </Container>
   );
 };

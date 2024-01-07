@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { HashRouter, BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { selectTheme } from './redux/selectors';
 import { Welcome, TopBar, Calculator, Paint, APIFetcher, BottomBar } from './modules';
+import { MainFrameContainer } from './styled';
 
 const App = () => {
   const { theme } = useSelector(selectTheme);
@@ -16,13 +17,15 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <TopBar />
-        <Routes>
-          <Route path="" element={<Navigate to="/welcome" />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/apifetcher" element={<APIFetcher />} />
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/paint" element={<Paint />} />
-        </Routes>
+        <MainFrameContainer>
+          <Routes>
+            <Route path="" element={<Navigate to="/welcome" />} />
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/apifetcher" element={<APIFetcher />} />
+            <Route path="/calculator" element={<Calculator />} />
+            <Route path="/paint" element={<Paint />} />
+          </Routes>
+        </MainFrameContainer>
         <BottomBar />
       </Router>
     </ThemeProvider>

@@ -15,7 +15,7 @@ import {
   LineIcon,
   CursorIcon,
 } from '../../components';
-import { Wrapper, Container, ToolBar, RightPart, CanvasContainer } from './styled';
+import { Container, ToolBar, RightPart, CanvasContainer } from './styled';
 
 import TransparentLight from '../../assets/transparent-light.png';
 import TransparentDark from '../../assets/transparent-dark.png';
@@ -37,71 +37,69 @@ export const Paint = () => {
 
   return (
     <>
-      <Wrapper>
-        <Container
-          style={{ backgroundImage: `url(${key === 'dark' ? TransparentDark : TransparentLight})` }}
-        >
-          <ToolBar>
-            <CursorIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip="Cursor"
-            />
-            <BrushIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip={'Brush'}
-            />
-            <SquareIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip={'Square'}
-            />
-            <CircleIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip={'Circle'}
-            />
-            <EraserIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip={'Eraser'}
-            />
-            <LineIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip={'Line'}
-            />
-            <PaletteIcon
-              onClick={event => clickHandler(event)}
-              color={theme.primaryTextColor}
-              tooltip={'Palette'}
-            />
+      <Container
+        style={{ backgroundImage: `url(${key === 'dark' ? TransparentDark : TransparentLight})` }}
+      >
+        <ToolBar>
+          <CursorIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip="Cursor"
+          />
+          <BrushIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip={'Brush'}
+          />
+          <SquareIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip={'Square'}
+          />
+          <CircleIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip={'Circle'}
+          />
+          <EraserIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip={'Eraser'}
+          />
+          <LineIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip={'Line'}
+          />
+          <PaletteIcon
+            onClick={event => clickHandler(event)}
+            color={theme.primaryTextColor}
+            tooltip={'Palette'}
+          />
 
-            <RightPart>
-              <UndoIcon
-                onClick={event => clickHandler(event)}
-                color={theme.primaryTextColor}
-                tooltip={'Undo changes'}
-              />
-              <RedoIcon
-                onClick={event => clickHandler(event)}
-                color={theme.primaryTextColor}
-                tooltip={'Redo changes'}
-              />
-              <SaveIcon
-                onClick={event => clickHandler(event)}
-                color={theme.primaryTextColor}
-                tooltip={'Save'}
-              />
-            </RightPart>
-          </ToolBar>
-          <CanvasContainer>
-            {/* TODO: canvas in progress. Don't forget about drag'n'drop */}
-            <Canvas reference={canvasRef} />
-          </CanvasContainer>
-        </Container>
-      </Wrapper>
+          <RightPart>
+            <UndoIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryTextColor}
+              tooltip={'Undo changes'}
+            />
+            <RedoIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryTextColor}
+              tooltip={'Redo changes'}
+            />
+            <SaveIcon
+              onClick={event => clickHandler(event)}
+              color={theme.primaryTextColor}
+              tooltip={'Save'}
+            />
+          </RightPart>
+        </ToolBar>
+        <CanvasContainer>
+          {/* TODO: canvas in progress. Don't forget about drag'n'drop */}
+          <Canvas reference={canvasRef} />
+        </CanvasContainer>
+      </Container>
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <input ref={strokeInputRef} type="number" min={0} max={999} />
       </Modal>

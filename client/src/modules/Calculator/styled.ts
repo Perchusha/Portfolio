@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import { StyledInput } from '../../components';
-import { MainFrameContainer } from '../../styled';
-
-export const Wrapper = styled(MainFrameContainer)``;
 
 export const Container = styled.div`
   width: 40vmin;

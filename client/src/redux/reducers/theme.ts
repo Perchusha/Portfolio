@@ -14,6 +14,7 @@ const handler = (builder: ActionReducerMapBuilder<IThemeInitialState>) => {
   builder.addCase(setTheme, (state, { payload }) => {
     state.key = payload;
     state.theme = payload === 'random' ? getRandomTheme() : Themes[payload];
+    document.documentElement.style.setProperty('color-scheme', payload);
     localStorage.setItem('theme', payload);
   });
 };
