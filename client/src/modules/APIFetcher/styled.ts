@@ -15,7 +15,7 @@ export const RequestsContainer = styled.div`
   padding: 2vmin 4vmin;
   border-radius: ${({ theme }) => theme.borderRadius};
   width: 75%;
-  height: 40%;
+  height: 35vmin;
   display: flex;
 
   &:not(:last-child) {

@@ -5,6 +5,6 @@ export const getRequestMeta = (type?: Method, id?: mongoose.Types.ObjectId | nul
   return {
     type,
     description: id ? `${type}_USER` : 'GET_ALL_USERS',
-    url: `http://localhost:${process.env.PORT || 8081}/users${id ? `/${id}` : ''}`,
+    url: `https://portfolio-d745.onrender.com/users${id ? `/${id}` : ''}`,
   };
 };
