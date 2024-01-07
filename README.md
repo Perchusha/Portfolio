@@ -1,10 +1,13 @@
-# [Portfolio app](https://perchusha.github.io/Portfolio/)
+# Portfolio app
 
 Greetings! This portfolio project consists of a client built with React and a server built with Node.js, which I'm slowly filling out.
 <br><br>
 The client offers three main functionalities: Calculator, Paint, and API Fetcher.
 <br><br>
 The server provides a basic API for working with MongoDB data. All endpoints are separated into routes and have full documentation.
+
+[Frontend deployed using GitHub pages](https://perchusha.github.io/Portfolio)<br>
+[Backend deployed using Render.com](https://dashboard.render.com/web)
 
 [LinkedIn: Anton Perch](https://www.linkedin.com/in/anton-perch-768578113/)
 

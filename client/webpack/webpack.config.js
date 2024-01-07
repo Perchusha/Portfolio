@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
@@ -7,6 +9,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const smp = new SpeedMeasurePlugin();
+const env = dotenv.config().parsed;
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
 
 module.exports = smp.wrap({
   mode: 'development',
@@ -70,5 +78,6 @@ module.exports = smp.wrap({
     new CopyPlugin({
       patterns: [{ from: 'public', filter: path => path.indexOf('html') === -1 }],
     }),
+    new webpack.DefinePlugin(envKeys),
   ],
 });

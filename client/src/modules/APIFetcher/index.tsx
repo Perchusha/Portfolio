@@ -10,7 +10,7 @@ export const APIFetcher = () => {
   useEffect(() => {
     if (!socketListening && socketPreviewRef && socketPreviewRef.current) {
       const container = socketPreviewRef.current;
-      const events = new EventSource('http://localhost:8081/sse');
+      const events = new EventSource(`${process.env.REACT_APP_BACKEND_HOST}/sse`);
 
       events.onmessage = event => {
         const data = JSON.parse(event.data);

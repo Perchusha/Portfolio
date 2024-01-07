@@ -3,7 +3,7 @@ import { StyledForm, StyledButton, StyledInput, StyledSelect } from '../../compo
 import { IRequestForm } from './types';
 
 export const RequestForm = ({ previewRef }: IRequestForm) => {
-  const [URL, setURL] = useState<string>('http://localhost:8081/users');
+  const [URL, setURL] = useState<string>(`${process.env.REACT_APP_BACKEND_HOST}/users`);
   const [requestMethod, setRequestMethod] = useState<string>('get');
   const [requestBody, setRequestBody] = useState<object>({});
 
