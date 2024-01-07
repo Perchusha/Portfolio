@@ -14,7 +14,6 @@ export const APIFetcher = () => {
 
       events.onmessage = event => {
         const data = JSON.parse(event.data);
-        console.log(data);
         container.innerText = `Last SSE message: \n\n${JSON.stringify(data, null, 4)}`;
       };
 
