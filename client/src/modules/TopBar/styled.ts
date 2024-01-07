@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   padding: 0 2vmin;
   overflow-x: auto;
   overflow-y: hidden;
-  color: ${({ theme }) => theme.primaryText};
+  color: ${({ theme }) => theme.primaryTextColor};
   font-size: ${({ theme }) => theme.fontSize};
 `;
 

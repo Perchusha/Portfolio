@@ -1,16 +1,7 @@
 import styled from 'styled-components';
+import { MainFrameContainer } from '../../styled';
 
-export const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.backgroundDark};
-  color: ${({ theme }) => theme.primaryText};
-  font-size: ${({ theme }) => theme.fontSize};
-`;
+export const Wrapper = styled(MainFrameContainer)``;
 
 export const Content = styled.div`
   width: 50%;
@@ -42,6 +33,12 @@ export const TitleSpan = styled.span`
 export const TextSpan = styled.span`
   font-size: ${({ theme }) => theme.fontSize};
   font-weight: 400;
+`;
+
+export const DescriptionSpan = styled.span`
+  font-size: ${({ theme }) => theme.descriptionSize};
+  font-weight: 400;
+  font-style: italic;
 `;
 
 export const LinksContainer = styled.div`

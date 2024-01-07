@@ -1,18 +1,12 @@
 import styled from 'styled-components';
+import { MainFrameContainer } from '../../styled';
 
-export const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  background: ${({ theme }) => theme.backgroundDark};
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-`;
+export const Wrapper = styled(MainFrameContainer)``;
 
 export const RequestsContainer = styled.div`
   background: ${({ theme }) => theme.backgroundLight};
   padding: 2vmin 4vmin;
+  border: 0.1vmin solid ${({ theme }) => theme.border};
   border-radius: ${({ theme }) => theme.borderRadius};
   width: 75%;
   height: 35vmin;
@@ -36,15 +30,11 @@ export const RequestsPreview = styled.div`
   font-size: 1.5vmin;
   white-space: pre;
   border: 0.1vmin solid ${({ theme }) => theme.border};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  color: black;
 `;
 
-export const SocketPreview = styled.div`
+export const SocketPreview = styled(RequestsPreview)`
   width: 100%;
-  height: 100%;
-  background: white;
-  overflow-y: auto;
-  padding: 0.5vmin 1vmin;
   font-size: 2vmin;
-  white-space: pre;
-  border: 0.1vmin solid ${({ theme }) => theme.border};
 `;

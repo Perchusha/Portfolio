@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectTheme } from '../../redux/selectors';
 import { LinkedInIcon, GitHubIcon, ReactIcon, JavaScriptIcon, NodeJSIcon } from '../../components';
-import Photo from '../../assets/Photo.png';
+import Photo from '../../assets/Me.jpg';
 import { IWelcomeRedirectServices } from './types';
 import {
   Wrapper,
@@ -14,6 +14,7 @@ import {
   PhotoContainer,
   TechStackContainer,
   TechImages,
+  DescriptionSpan,
 } from './styled';
 
 export const Welcome = () => {
@@ -38,11 +39,20 @@ export const Welcome = () => {
           <TextContent>
             <TitleSpan>Senior Front-End Engineer 👋🏻</TitleSpan>
             <TextSpan>
-              Hi, I'm Anton Perch. A passionate Senior Front-end Engineer based in Warsaw, Poland 📍
+              Hello! My name is Anton Perch, I am a Senior Full-Stack engineer based in Warsaw,
+              Poland 📍
             </TextSpan>
+            <DescriptionSpan>
+              This portfolio is just a small project to catch your attention. Its purpose is not to
+              demonstrate how skilled I am (you will figure that out on your own). It is meant for
+              me to occasionally practice solving various tasks that come to mind.
+            </DescriptionSpan>
             <LinksContainer>
-              <LinkedInIcon onClick={() => linksHandler('linkedin')} color={theme.primaryText} />
-              <GitHubIcon onClick={() => linksHandler('github')} color={theme.primaryText} />
+              <LinkedInIcon
+                onClick={() => linksHandler('linkedin')}
+                color={theme.primaryTextColor}
+              />
+              <GitHubIcon onClick={() => linksHandler('github')} color={theme.primaryTextColor} />
             </LinksContainer>
           </TextContent>
           <PhotoContainer>
@@ -52,9 +62,12 @@ export const Welcome = () => {
         <TechStackContainer>
           <TextSpan>Main Tech Stack:</TextSpan>
           <TechImages>
-            <ReactIcon onClick={() => linksHandler('react')} color={theme.primaryText} />
-            <JavaScriptIcon onClick={() => linksHandler('javascript')} color={theme.primaryText} />
-            <NodeJSIcon onClick={() => linksHandler('nodejs')} color={theme.primaryText} />
+            <ReactIcon onClick={() => linksHandler('react')} color={theme.primaryTextColor} />
+            <JavaScriptIcon
+              onClick={() => linksHandler('javascript')}
+              color={theme.primaryTextColor}
+            />
+            <NodeJSIcon onClick={() => linksHandler('nodejs')} color={theme.primaryTextColor} />
           </TechImages>
         </TechStackContainer>
       </Content>

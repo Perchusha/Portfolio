@@ -5,7 +5,7 @@ const inputDefault = css`
   font-family: Manrope, serif;
   width: 100%;
   background: ${({ theme }) => theme.backgroundDark};
-  color: ${({ theme }) => theme.primaryText};
+  color: ${({ theme }) => theme.primaryTextColor};
   border: 0.1vmin solid ${({ theme }) => theme.border};
   border-radius: ${({ theme }) => theme.borderRadius};
   font-size: ${({ theme }) => theme.fontSize};

@@ -39,7 +39,7 @@ export const Button = styled.button<{ mode: IButtonMode; $active: boolean }>`
   ${({ mode, theme }) => {
     switch (mode) {
       case 'base':
-        return `color: ${theme.primaryText}; background: ${theme.primary};`;
+        return `color: ${theme.primaryTextColor}; background: ${theme.primary};`;
       case 'success':
         return `color: ${theme.successText}; background: ${theme.success};`;
       case 'error':

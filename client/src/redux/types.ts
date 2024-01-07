@@ -4,7 +4,7 @@ export interface IThemeProps {
   fontSize: string;
   titleSize: string;
   primary: string;
-  primaryText: string;
+  primaryTextColor: string;
   success: string;
   successText: string;
   danger: string;

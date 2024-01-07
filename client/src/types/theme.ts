@@ -8,23 +8,20 @@ export type IThemes = {
   [key in ITheme]: IThemeProps;
 };
 
-export interface IThemeProps {
-  fontSize: string;
-  titleSize: string;
+export interface ICommonProps {
   primary: string;
-  primaryText: string;
   success: string;
   successText: string;
   danger: string;
   dangerText: string;
-  background: string;
-  backgroundLight: string;
-  backgroundDark: string;
-  border: string;
+  descriptionSize: string;
+  fontSize: string;
+  titleSize: string;
   focus: string;
   active: string;
   topBarHeight: string;
   bottomBarHeight: string;
+  mainFrameContainerHeight: string;
   fontFamily: string;
   borderRadius: string;
   devices: {
@@ -34,4 +31,12 @@ export interface IThemeProps {
     laptopL: string;
     desktop: string;
   };
+}
+
+export interface IThemeProps extends ICommonProps {
+  primaryTextColor: string;
+  background: string;
+  backgroundLight: string;
+  backgroundDark: string;
+  border: string;
 }

@@ -44,54 +44,54 @@ export const Paint = () => {
           <ToolBar>
             <CursorIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip="Cursor"
             />
             <BrushIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip={'Brush'}
             />
             <SquareIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip={'Square'}
             />
             <CircleIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip={'Circle'}
             />
             <EraserIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip={'Eraser'}
             />
             <LineIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip={'Line'}
             />
             <PaletteIcon
               onClick={event => clickHandler(event)}
-              color={theme.primaryText}
+              color={theme.primaryTextColor}
               tooltip={'Palette'}
             />
 
             <RightPart>
               <UndoIcon
                 onClick={event => clickHandler(event)}
-                color={theme.primaryText}
+                color={theme.primaryTextColor}
                 tooltip={'Undo changes'}
               />
               <RedoIcon
                 onClick={event => clickHandler(event)}
-                color={theme.primaryText}
+                color={theme.primaryTextColor}
                 tooltip={'Redo changes'}
               />
               <SaveIcon
                 onClick={event => clickHandler(event)}
-                color={theme.primaryText}
+                color={theme.primaryTextColor}
                 tooltip={'Save'}
               />
             </RightPart>

@@ -1,13 +1,7 @@
 import styled from 'styled-components';
+import { MainFrameContainer } from '../../styled';
 
-export const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.backgroundDark};
-`;
+export const Wrapper = styled(MainFrameContainer)``;
 
 export const Container = styled.div`
   width: 160vmin;
