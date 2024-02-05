@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledCanvas = styled.canvas`
+export const StyledCanvas = styled.canvas<{ width: number; height: number; mouse: string }>`
   background: white;
-  width: 800px;
-  height: 600px;
+  width: ${({ width }) => `${width}px`};
+  height: ${({ height }) => `${height}px`};
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: ${({ mouse }) => mouse};
 `;

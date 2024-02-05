@@ -1,11 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
-import mongoConnect from './utils/mongo';
 import cors from 'cors';
+import mongoConnect from './utils/mongo';
+import routes from './api/routes';
+import { errorHandler } from './middlewares/error';
 
-import userRoutes from './api/routes/users';
-import sseRoutes from './api/routes/sse';
-
+const router = express.Router();
 const app = express();
 
 app
@@ -16,6 +16,6 @@ app
 
 mongoConnect();
 
-app.use('/users', userRoutes).use('/sse', sseRoutes);
+app.use('/', routes(router)).use(errorHandler);
 
 export default app;

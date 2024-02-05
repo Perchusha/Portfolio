@@ -4,6 +4,7 @@ import { Themes, getRandomTheme } from '../../utils';
 import { IThemeInitialState, ITheme } from '../types';
 
 const themeKey: ITheme = (localStorage.getItem('theme') as ITheme) || 'dark';
+document.documentElement.style.setProperty('color-scheme', themeKey);
 
 const initialState: IThemeInitialState = {
   key: themeKey,

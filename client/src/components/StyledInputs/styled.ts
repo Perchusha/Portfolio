@@ -21,6 +21,16 @@ const inputDefault = css`
 
 export const Input = styled.input`
   ${inputDefault}
+
+  &[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
 `;
 
 export const Select = styled.select`

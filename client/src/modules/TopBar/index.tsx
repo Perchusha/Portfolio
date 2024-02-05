@@ -9,6 +9,7 @@ export const TopBar = () => {
         <NavigateButton to={'/apifetcher'}>API Fetcher</NavigateButton>
         <NavigateButton to={'/calculator'}>Calculator</NavigateButton>
         <NavigateButton to={'/paint'}>Paint</NavigateButton>
+        <NavigateButton to={'/lifecycle'}>LifeCycle</NavigateButton>
       </RightPart>
     </Wrapper>
   );
