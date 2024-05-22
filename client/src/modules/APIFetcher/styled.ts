@@ -35,3 +35,5 @@ export const SocketPreview = styled(RequestsPreview)`
   width: 100%;
   font-size: 2vmin;
 `;
+
+export const WebsocketPreview = styled(SocketPreview)``;
